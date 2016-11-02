@@ -8585,7 +8585,7 @@ h6 {
 \* ------------------------------------------------------------ */
 .section-ribbon i {
   font-size: 80px;
-  color: #7f64b5;
+  color: #89c53f;
 }
 
 .section-ribbon i.white {
@@ -11661,7 +11661,7 @@ a.logo:hover {
 }
 
 .nav a {
-  color: #54667a;
+  color: #093d88;
   text-transform: uppercase;
 }
 
@@ -11673,7 +11673,7 @@ a.logo:hover {
 
 .nav li:hover > a,
 .nav .current > a {
-  color: #51b8f2;
+  color: #89c53f;
   text-decoration: none;
 }
 
@@ -12239,7 +12239,7 @@ a.logo:hover {
 .doctor-name {
   display: inline-block;
   padding: 16px 33px 15px;
-  background-color: #51b8f2;
+  background-color: #7f64b5;
   font-family: "Karla", sans-serif;
   color: #ffffff;
   font-weight: 700;
@@ -12247,7 +12247,7 @@ a.logo:hover {
 }
 
 .doctor-box {
-  border-left: 3px solid #51b8f2;
+  border-left: 3px solid #7f64b5;
   background-color: #f0f5fa;
 }
 
@@ -13509,7 +13509,7 @@ a.logo:hover {
   margin-bottom: 0;
   height: 52px;
   font-size: 15px;
-  background-color: #51b8f2;
+  background-color: #89c53f;
   text-transform: uppercase;
   padding: 18px 15px !important;
   color: #ffffff;
@@ -13601,7 +13601,7 @@ a.logo:hover {
 }
 
 .button.btn-small {
-  border: 1px solid #51b8f2;
+  border: 1px solid #89c53f;
 }
 
 .btn-small.btn-purple {
@@ -13939,13 +13939,13 @@ a.logo:hover {
   height: 52px;
   padding: 16px 0;
   color: #fff;
-  background-color: #51b8f2;
+  background-color: #89c53f;
   text-align: center;
 }
 
 .intro-slider .slide-caption-inner {
   padding: 30px 33px;
-  border-left: 3px solid #51b8f2;
+  border-left: 3px solid #89c53f;
   background-color: #fff;
 }
 
@@ -13985,6 +13985,8 @@ a.logo:hover {
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
+  /*Hide Intro Slider Controls - Elan*/
+  display: none;
 }
 
 .bx-wrapper .bx-controls .bx-prev:hover,
@@ -14136,12 +14138,13 @@ a.logo:hover {
   float: left;
   margin-right: 14px;
   font-size: 46px;
+  color: #093d88
 }
 
 .phone small,
 .phone a {
   display: block;
-  color: #54667a;
+  color: #093d88;
 }
 
 .phone small {
@@ -14347,7 +14350,7 @@ input[type='text'].field-date.error:-ms-input-placeholder {
 }
 
 .list-services {
-  margin: 0 -15px;
+  margin: 0 160px;
   list-style: none outside none;
 }
 
