@@ -1,6 +1,6 @@
 ;(function($) {
 	"use strict";
-	
+
 	$(document).ready(function() {
 
 		var $win = $(window);
@@ -9,7 +9,7 @@
 		// Load Foundation
 		$(document).foundation();
 
-		// Intro Small 
+		// Intro Small
 		$('.intro-small .intro-image').stellar({
 			horizontalScrolling: false,
 			verticalOffset: 40
@@ -30,7 +30,7 @@
 
 		//Intro Slider
 		var introSlider = $('.intro-slider .slides').bxSlider({
-			auto: true,
+			auto: false,
 			pager: false,
 			autoControls: true,
 			autoHover: true
@@ -93,7 +93,7 @@
 				$(this)[0].pause();
 				$('.btn-play').show();
 			});
-			
+
 		});
 
 		//Slider Services
@@ -117,7 +117,7 @@
 
 			if($(this).parents().hasClass('list-services-slider')) {
 				sliderList.stopAuto();
-				sliderList.startAuto();	
+				sliderList.startAuto();
 			}
 		});
 
@@ -166,7 +166,7 @@
 			}
 
 			$listItem
-				.toggleClass('active')	   			
+				.toggleClass('active')
 				.siblings()
 				.removeClass('active');
 
@@ -174,7 +174,7 @@
 				$listItem
 					.children('.nav-dropdown')
 					.slideToggle();
-			}	
+			}
 		});
 
 		// Mobile Nav
@@ -185,7 +185,7 @@
 				.toggleClass('active');
 
 			$('.nav').slideToggle();
-			$('.nav-dropdown').slideUp();	
+			$('.nav-dropdown').slideUp();
 		});
 
 		var isMobileWidth = false;
@@ -244,7 +244,7 @@
 						.find('.message-error')
 						.addClass('active');
 				},
-				submitHandler: function(form) { 
+				submitHandler: function(form) {
 					$(form).submit(function () {
 						$(this).ajaxSubmit();
 
