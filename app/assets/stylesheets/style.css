@@ -8341,40 +8341,40 @@ th.hide-for-touch {
 \* ------------------------------------------------------------ */
 @font-face {
   font-family: 'Dosis';
-  src: url("fonts/dosisbold-webfont.eot");
-  src: url("fonts/dosisbold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/dosisbold-webfont.woff") format("woff"), url("fonts/dosisbold-webfont.ttf") format("truetype"), url("fonts/dosisbold-webfont.svg#dosisbold") format("svg");
+  src: url("dosisbold-webfont.eot");
+  src: url("dosisbold-webfont.eot?#iefix") format("embedded-opentype"), url("dosisbold-webfont.woff") format("woff"), url("dosisbold-webfont.ttf") format("truetype"), url("dosisbold-webfont.svg#dosisbold") format("svg");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Dosis';
-  src: url("fonts/dosislight-webfont.eot");
-  src: url("fonts/dosislight-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/dosislight-webfont.woff") format("woff"), url("fonts/dosislight-webfont.ttf") format("truetype"), url("fonts/dosislight-webfont.svg#dosislight") format("svg");
+  src: url("dosislight-webfont.eot");
+  src: url("dosislight-webfont.eot?#iefix") format("embedded-opentype"), url("dosislight-webfont.woff") format("woff"), url("dosislight-webfont.ttf") format("truetype"), url("dosislight-webfont.svg#dosislight") format("svg");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
-  src: url("fonts/karlabold-webfont.eot");
-  src: url("fonts/karlabold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/karlabold-webfont.woff") format("woff"), url("fonts/karlabold-webfont.ttf") format("truetype"), url("fonts/karlabold-webfont.svg#karlabold") format("svg");
+  src: url("karlabold-webfont.eot");
+  src: url("karlabold-webfont.eot?#iefix") format("embedded-opentype"), url("karlabold-webfont.woff") format("woff"), url("karlabold-webfont.ttf") format("truetype"), url("karlabold-webfont.svg#karlabold") format("svg");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
-  src: url("fonts/karlaregular-webfont.eot");
-  src: url("fonts/karlaregular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/karlaregular-webfont.woff") format("woff"), url("fonts/karlaregular-webfont.ttf") format("truetype"), url("fonts/karlaregular-webfont.svg#karlaregular") format("svg");
+  src: url("karlaregular-webfont.eot");
+  src: url("karlaregular-webfont.eot?#iefix") format("embedded-opentype"), url("karlaregular-webfont.woff") format("woff"), url("karlaregular-webfont.ttf") format("truetype"), url("karlaregular-webfont.svg#karlaregular") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
-  src: url("fonts/karlaitalic-webfont.eot");
-  src: url("fonts/karlaitalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/karlaitalic-webfont.woff") format("woff"), url("fonts/karlaitalic-webfont.ttf") format("truetype"), url("fonts/karlaitalic-webfont.svg#karlaitalic") format("svg");
+  src: url("karlaitalic-webfont.eot");
+  src: url("karlaitalic-webfont.eot?#iefix") format("embedded-opentype"), url("karlaitalic-webfont.woff") format("woff"), url("karlaitalic-webfont.ttf") format("truetype"), url("karlaitalic-webfont.svg#karlaitalic") format("svg");
   font-weight: 400;
   font-style: italic;
 }
@@ -8607,8 +8607,8 @@ h6 {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?q971zn");
-  src: url("fonts/icomoon.eot?#iefixq971zn") format("embedded-opentype"), url("fonts/icomoon.woff?q971zn") format("woff"), url("fonts/icomoon.ttf?q971zn") format("truetype"), url("fonts/icomoon.svg?q971zn#icomoon") format("svg");
+  src: url("icomoon.eot?q971zn");
+  src: url("icomoon.eot?#iefixq971zn") format("embedded-opentype"), url("icomoon.woff?q971zn") format("woff"), url("icomoon.ttf?q971zn") format("truetype"), url("icomoon.svg?q971zn#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16404,8 +16404,8 @@ input[type="search"].search-field:-ms-input-placeholder {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("fonts/fontawesome-webfont.eot?v=4.3.0");
-  src: url("fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  src: url("fontawesome-webfont.eot?v=4.3.0");
+  src: url("fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("fontawesome-webfont.woff?v=4.3.0") format("woff"), url("fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
