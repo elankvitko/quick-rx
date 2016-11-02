@@ -11,3 +11,7 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.paths << "#{Rails.root}/app/assets/videos"
+
+Rails.application.config.assets.precompile += %w( app.js )
+Rails.application.config.assets.precompile += %w( jquery.stellar.min.js )
+Rails.application.config.assets.precompile += %w( vendor.js )
