@@ -8341,40 +8341,40 @@ th.hide-for-touch {
 \* ------------------------------------------------------------ */
 @font-face {
   font-family: 'Dosis';
-  src: url("dosisbold-webfont.eot");
-  src: url("dosisbold-webfont.eot?#iefix") format("embedded-opentype"), url("dosisbold-webfont.woff") format("woff"), url("dosisbold-webfont.ttf") format("truetype"), url("dosisbold-webfont.svg#dosisbold") format("svg");
+  src: font-url("dosisbold-webfont.eot");
+  src: font-url("dosisbold-webfont.eot?#iefix") format("embedded-opentype"), font-url("dosisbold-webfont.svg#dosisbold") format("svg"), font-url("dosisbold-webfont.woff") format("woff"), font-url("dosisbold-webfont.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Dosis';
-  src: url("dosislight-webfont.eot");
-  src: url("dosislight-webfont.eot?#iefix") format("embedded-opentype"), url("dosislight-webfont.woff") format("woff"), url("dosislight-webfont.ttf") format("truetype"), url("dosislight-webfont.svg#dosislight") format("svg");
+  src: font-url("dosislight-webfont.eot");
+  src: font-url("dosislight-webfont.eot?#iefix") format("embedded-opentype"), font-url("dosislight-webfont.svg#dosislight") format("svg"), font-url("dosislight-webfont.woff") format("woff"), font-url("dosislight-webfont.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
-  src: url("karlabold-webfont.eot");
-  src: url("karlabold-webfont.eot?#iefix") format("embedded-opentype"), url("karlabold-webfont.woff") format("woff"), url("karlabold-webfont.ttf") format("truetype"), url("karlabold-webfont.svg#karlabold") format("svg");
+  src: font-url("karlabold-webfont.eot");
+  src: font-url("karlabold-webfont.eot?#iefix") format("embedded-opentype"), font-url("karlabold-webfont.woff") format("woff"), font-url("karlabold-webfont.ttf") format("truetype"), font-url("karlabold-webfont.svg#karlabold") format("svg");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
-  src: url("karlaregular-webfont.eot");
-  src: url("karlaregular-webfont.eot?#iefix") format("embedded-opentype"), url("karlaregular-webfont.woff") format("woff"), url("karlaregular-webfont.ttf") format("truetype"), url("karlaregular-webfont.svg#karlaregular") format("svg");
+  src: font-url("karlaregular-webfont.eot");
+  src: font-url("karlaregular-webfont.eot?#iefix") format("embedded-opentype"), font-url("karlaregular-webfont.woff") format("woff"), font-url("karlaregular-webfont.ttf") format("truetype"), font-url("karlaregular-webfont.svg#karlaregular") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Karla';
-  src: url("karlaitalic-webfont.eot");
-  src: url("karlaitalic-webfont.eot?#iefix") format("embedded-opentype"), url("karlaitalic-webfont.woff") format("woff"), url("karlaitalic-webfont.ttf") format("truetype"), url("karlaitalic-webfont.svg#karlaitalic") format("svg");
+  src: font-url("karlaitalic-webfont.eot");
+  src: font-url("karlaitalic-webfont.eot?#iefix") format("embedded-opentype"), font-url("karlaitalic-webfont.woff") format("woff"), font-url("karlaitalic-webfont.ttf") format("truetype"), font-url("karlaitalic-webfont.svg#karlaitalic") format("svg");
   font-weight: 400;
   font-style: italic;
 }
@@ -8607,8 +8607,8 @@ h6 {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("icomoon.eot?q971zn");
-  src: url("icomoon.eot?#iefixq971zn") format("embedded-opentype"), url("icomoon.woff?q971zn") format("woff"), url("icomoon.ttf?q971zn") format("truetype"), url("icomoon.svg?q971zn#icomoon") format("svg");
+  src: font-url("icomoon.eot?q971zn");
+  src: font-url("icomoon.eot?#iefixq971zn") format("embedded-opentype"), font-url("icomoon.woff?q971zn") format("woff"), font-url("icomoon.ttf?q971zn") format("truetype"), font-url("icomoon.svg?q971zn#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16404,8 +16404,8 @@ input[type="search"].search-field:-ms-input-placeholder {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("fontawesome-webfont.eot?v=4.3.0");
-  src: url("fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("fontawesome-webfont.woff?v=4.3.0") format("woff"), url("fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  src: font-url("fontawesome-webfont.eot?v=4.3.0");
+  src: font-url("fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), font-url("fontawesome-webfont.woff2?v=4.3.0") format("woff2"), font-url("fontawesome-webfont.woff?v=4.3.0") format("woff"), font-url("fontawesome-webfont.ttf?v=4.3.0") format("truetype"), font-url("fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
