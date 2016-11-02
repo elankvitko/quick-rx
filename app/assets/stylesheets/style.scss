@@ -16053,7 +16053,7 @@ input[type="search"].search-field:-ms-input-placeholder {
 /* LOADER */
 .bx-wrapper .bx-loading {
   min-height: 50px;
-  background: image_url(bx_loader.gif) center center no-repeat #fff;
+  background: image_url("bx_loader.gif") center center no-repeat #fff;
   height: 100%;
   width: 100%;
   position: absolute;
