@@ -45,9 +45,7 @@
 
 		<div class="row">
 			<div class="columns large-3 medium-12">
-				<a href="index.html" class="logo">
-          <%= image_tag("logo.png", size: "762x78", alt: "QuickRx") %>
-				</a>
+				<%= link_to image_tag( "logo.png" ), { action: 'index', controller: 'home' }, class: 'logo', method: :get %>
 			</div><!-- /.columns large-3 -->
 
 			<div class="columns large-7 medium-8">
