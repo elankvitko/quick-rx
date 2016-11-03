@@ -13626,27 +13626,28 @@ a.logo:hover {
 }
 
 /*Btn Play*/
-.btn-play {
-  position: relative;
-  display: inline-block;
-  width: 42px;
-  height: 42px;
-  border: 6px solid #ffffff;
-  border-radius: 50%;
-}
+// .btn-play {
+//   position: relative;
+//   display: inline-block;
+//   width: 42px;
+//   height: 42px;
+//   border: 6px solid #ffffff;
+//   border-radius: 50%;
+//   display: none;
+// }
 
-.btn-play:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 10px 0 10px 18px;
-  border-color: transparent transparent transparent #ffffff;
-  margin: -10px 0 0 -6px;
-}
+// .btn-play:after {
+//   content: '';
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+//   border-width: 10px 0 10px 18px;
+//   border-color: transparent transparent transparent #ffffff;
+//   margin: -10px 0 0 -6px;
+// }
 
 /*Burger Button*/
 .btn-menu {
@@ -14511,6 +14512,7 @@ input[type='text'].field-date.error:-ms-input-placeholder {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  display: none;
 }
 
 .section-doctors-alt .bx-wrapper {
