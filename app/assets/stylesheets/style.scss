@@ -8585,7 +8585,7 @@ h6 {
 \* ------------------------------------------------------------ */
 .section-ribbon i {
   font-size: 80px;
-  color: #89c53f;
+  color: #54667a;
 }
 
 .section-ribbon i.white {
@@ -12239,7 +12239,7 @@ a.logo:hover {
 .doctor-name {
   display: inline-block;
   padding: 16px 33px 15px;
-  background-color: #7f64b5;
+  background-color: #51b8f2;
   font-family: "Karla", sans-serif;
   color: #ffffff;
   font-weight: 700;
@@ -12247,8 +12247,16 @@ a.logo:hover {
 }
 
 .doctor-box {
-  border-left: 3px solid #7f64b5;
+  border-left: 3px solid #51b8f2;
   background-color: #f0f5fa;
+}
+
+.single-doc-color {
+  background-color: #54667a;
+}
+
+.single-doc-box {
+  border-left: 3px solid #54667a;
 }
 
 .section-doctors-alt .doctor-box {
@@ -12343,16 +12351,16 @@ a.logo:hover {
 }
 
 .section-services .section-ribbon {
-  background-color: #7f64b5;
+  background-color: #54667a;
 }
 
 .section-services .section-ribbon:before {
-  border-color: transparent transparent #7f64b5 transparent;
+  border-color: transparent transparent #54667a transparent;
 }
 
 .section-services .section-head {
   padding: 78px 0 42px;
-  background-color: #7f64b5;
+  background-color: #54667a;
   text-align: center;
 }
 
@@ -13509,7 +13517,7 @@ a.logo:hover {
   margin-bottom: 0;
   height: 52px;
   font-size: 15px;
-  background-color: #89c53f;
+  background-color: #51b8f2;
   text-transform: uppercase;
   padding: 18px 15px !important;
   color: #ffffff;
@@ -13601,7 +13609,7 @@ a.logo:hover {
 }
 
 .button.btn-small {
-  border: 1px solid #89c53f;
+  border: 1px solid #ffffff;
 }
 
 .btn-small.btn-purple {
@@ -14335,7 +14343,7 @@ input[type='text'].field-date.error:-ms-input-placeholder {
 }
 
 .tab-head {
-  background-color: #7f64b5;
+  background-color: #54667a;
   padding-bottom: 43px;
 }
 
@@ -14382,7 +14390,7 @@ input[type='text'].field-date.error:-ms-input-placeholder {
   bottom: 0;
   left: 0;
   width: 1px;
-  background-color: #8c71c1;
+  background-color: #ffffff;
 }
 
 .list-services a,
