@@ -11857,7 +11857,7 @@ a.logo:hover {
 /* ------------------------------------------------------------ *	Intro
 \* ------------------------------------------------------------ */
 .intro.no-bg-img {
-  background: #7f64b5;
+  background: #54667a;
 }
 
 .intro {
@@ -12577,6 +12577,12 @@ a.logo:hover {
 
 .event {
   margin-bottom: 39px;
+}
+
+// 404 pages
+
+.error {
+  background: #54667a !important;
 }
 
 .event-image {
@@ -13503,11 +13509,13 @@ a.logo:hover {
   font-size: 160px;
   font-weight: normal;
   margin-bottom: 30px;
+  color: #fff;
 }
 
 .error-subtitle {
   font-weight: normal;
   margin-bottom: 30px;
+  color: #fff;
 }
 
 /* ------------------------------------------------------------ *	Buttons

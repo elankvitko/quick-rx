@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" >
+	<title>Quick RX</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+</head>
+<body>
+<div class="wrapper">
+
+	<%= render "layouts/header" %>
+
+	<div class="main grey">
+		<div class="row">
+			<div class="columns large-12">
+				<p class="breadcrumbs">
+					<a href="#">Home</a>
+					<span>
+						<i class="fa fa-angle-right"></i>
+					</span>
+
+					<a href="#" class="current">404 Error Page</a>
+				</p><!-- /.breadcrumbs -->
+			</div><!-- /.columns large-12 -->
+
+			<div class="columns large-12 medium-12">
+				<div class="content">
+					<article class="event article-single-event">
+
+						<div class="entry-content">
+							<div class="event-body error" itemprop="articleBody">
+								<h1 class="error-title text-center">404</h1>
+								<h2 class="error-subtitle text-center">The Page You Are Looking For Cannot Be Found</h2>
+								<p class="text-center"><%= link_to "Visit Home Page", root_path, method: :get %></p>
+							</div><!-- /.event-body -->
+						</div><!-- /.event-box -->
+					</article><!-- /.event article-single-event -->
+
+				</div><!-- /.content -->
+			</div><!-- /.columns large-8 -->
+		</div><!-- /.row -->
+	</div><!-- /.main -->
+
+  <%= render "layouts/footer" %>
+</div><!-- /.wrapper -->
+</body>
+</html>
