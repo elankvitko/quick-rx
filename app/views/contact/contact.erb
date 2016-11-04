@@ -1,0 +1,369 @@
+<div class="wrapper">
+  <%= render "layouts/header" %>
+
+  <div id="map"></div>
+
+  <div class="main grey">
+  		<div class="row">
+  			<div class="columns large-12">
+  				<p class="breadcrumbs">
+  				</p><!-- /.breadcrumbs -->
+  			</div><!-- /.columns large-12 -->
+
+  			<div class="columns large-8 medium-7 right">
+  				<div class="content">
+  					<article class="event article-single-event">
+
+  						<div class="entry-content">
+  							<div class="event-body" itemprop="articleBody">
+  								<p>We love feedback! Please contact any one of our locations on the left hand side to let us know how we're doing. Our corporate headquarters information is below. Thank you for choosing Quick RX!</p>
+
+  								<blockquote>Quick RX Corporate <br> 1047 Surf Ave. <br> Brooklyn, NY 11224 <br> (212) 249-8202 <%= image_tag( 'logo.png', size: "250x150", class: "qrx-logo-contact" ) %> </blockquote>
+
+  							</div><!-- /.event-body -->
+  						</div><!-- /.event-box -->
+  					</article><!-- /.event article-single-event -->
+
+  				</div><!-- /.content -->
+  			</div><!-- /.columns large-8 -->
+
+  			<div class="columns large-4 medium-5">
+  				<div class="sidebar">
+  					<div class="widgets">
+
+  						<div class="widget widget-categories">
+  							<h4>CHOOSE FROM ANY OF OUR CONVENIENT</h4>
+
+  							<h3>Locations</h3>
+
+  							<ul class="list-plus">
+  								<li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										Upper West Side
+  									</a>
+  								</li>
+
+  								<li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										Upper East Side
+  									</a>
+  								</li>
+
+  								<li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										Washington Heights
+  									</a>
+  								</li>
+
+                  <li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										East Harlem
+  									</a>
+  								</li>
+
+                  <li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										Huntington (Long Island)
+  									</a>
+  								</li>
+
+  								<li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										Morris Park (Bronx)
+  									</a>
+  								</li>
+
+                  <li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										Bedford-Stuyvesant (Brooklyn)
+  									</a>
+  								</li>
+
+                  <li>
+  									<a href="#">
+  										<i class="fa fa-plus"></i>
+  										Coney Island (Brooklyn)
+  									</a>
+  								</li>
+  							</ul><!-- /.list-plus -->
+  						</div><!-- /.widget widget-categories -->
+  					</div><!-- /.widgets -->
+  				</div><!-- /.sidebar -->
+  			</div><!-- /.columns large-4 -->
+  		</div><!-- /.row -->
+  	</div><!-- /.main -->
+
+  <%= render "layouts/footer" %>
+</div>
+
+<script>
+  function initMap() {
+
+    // Columbus
+    contentString = 'Columbus'
+
+    var columbus = {
+      lat: 40.798195,
+      lng: -73.963364
+    };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 9,
+      center: columbus,
+      scrollwheel: false
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+    var marker = new google.maps.Marker({
+      position: columbus,
+      map: map
+    });
+
+    marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+    map.addListener( 'click', function() {
+      infowindow.close();
+    });
+
+    // Audubon
+
+    contentString1 = 'Audubon'
+
+    var audubon = {
+      lat: 40.839717,
+      lng: -73.938636
+    }
+
+    var infowindow1 = new google.maps.InfoWindow({
+          content: contentString1
+        });
+
+    var marker1 = new google.maps.Marker({
+      position: audubon,
+      map: map
+    });
+
+    marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+    map.addListener( 'click', function() {
+      infowindow1.close();
+    });
+
+  // Mermaid
+
+  contentString2 = 'Mermaid'
+
+  var mermaid = {
+    lat: 40.575434,
+    lng: -73.993843
+  }
+
+  var infowindow2 = new google.maps.InfoWindow({
+        content: contentString2
+      });
+
+  var marker2 = new google.maps.Marker({
+    position: mermaid,
+    map: map
+  });
+
+  marker2.addListener('click', function() {
+        infowindow2.open(map, marker2);
+      });
+  map.addListener( 'click', function() {
+    infowindow2.close();
+  });
+
+  // RxInc.
+
+  contentString3 = 'RxInc.'
+
+  var rxinc = {
+    lat: 40.882379,
+    lng: -73.392500
+  }
+
+  var infowindow3 = new google.maps.InfoWindow({
+        content: contentString3
+      });
+
+  var marker3 = new google.maps.Marker({
+    position: rxinc,
+    map: map
+  });
+
+  marker3.addListener('click', function() {
+        infowindow3.open(map, marker3);
+      });
+  map.addListener( 'click', function() {
+    infowindow3.close();
+  });
+
+  // RxCorp.
+
+  contentString4 = 'RxCorp.'
+
+  var rxcorp = {
+    lat: 40.679781,
+    lng: -73.942669
+  }
+
+  var infowindow4 = new google.maps.InfoWindow({
+        content: contentString4
+      });
+
+  var marker4 = new google.maps.Marker({
+    position: rxcorp,
+    map: map
+  });
+
+  marker4.addListener('click', function() {
+        infowindow4.open(map, marker4);
+      });
+  map.addListener( 'click', function() {
+    infowindow4.close();
+  });
+
+  // Bedstuy
+
+  contentString5 = 'Bedstuy'
+
+  var bedstuy = {
+    lat: 40.679842,
+    lng: -73.942555
+  }
+
+  var infowindow5 = new google.maps.InfoWindow({
+        content: contentString5
+      });
+
+  var marker5 = new google.maps.Marker({
+    position: bedstuy,
+    map: map
+  });
+
+  marker5.addListener('click', function() {
+        infowindow5.open(map, marker5);
+      });
+  map.addListener( 'click', function() {
+    infowindow5.close();
+  });
+
+
+  // Blondell
+
+  contentString6 = 'Blondell'
+
+  var blondell = {
+    lat: 40.845397,
+    lng: -73.844654
+  }
+
+  var infowindow6 = new google.maps.InfoWindow({
+        content: contentString6
+      });
+
+  var marker6 = new google.maps.Marker({
+    position: blondell,
+    map: map
+  });
+
+  marker6.addListener('click', function() {
+        infowindow6.open(map, marker6);
+      });
+  map.addListener( 'click', function() {
+    infowindow6.close();
+  });
+
+
+  // RxCorp96
+
+  contentString7 = 'RxCorp96'
+
+  var rxcorp96 = {
+    lat: 40.785673,
+    lng: -73.949534
+  }
+
+  var infowindow7 = new google.maps.InfoWindow({
+        content: contentString7
+      });
+
+  var marker7 = new google.maps.Marker({
+    position: rxcorp96,
+    map: map
+  });
+
+  marker7.addListener('click', function() {
+        infowindow7.open(map, marker7);
+      });
+  map.addListener( 'click', function() {
+    infowindow7.close();
+  });
+
+  // AvenueCorp
+
+  contentString8 = 'AvenueCorp'
+
+  var avenuecorp = {
+    lat: 40.800147,
+    lng: -73.935818
+  }
+
+  var infowindow8 = new google.maps.InfoWindow({
+        content: contentString8
+      });
+
+  var marker8 = new google.maps.Marker({
+    position: avenuecorp,
+    map: map
+  });
+
+  marker8.addListener('click', function() {
+        infowindow8.open(map, marker8);
+      });
+  map.addListener( 'click', function() {
+    infowindow8.close();
+  });
+
+
+  // Lexington
+
+  contentString9 = 'Lexington'
+
+  var lexington = {
+    lat: 40.798905,
+    lng: -73.941131
+  }
+
+  var infowindow9 = new google.maps.InfoWindow({
+        content: contentString9
+      });
+
+  var marker9 = new google.maps.Marker({
+    position: lexington,
+    map: map
+  });
+
+  marker9.addListener('click', function() {
+        infowindow9.open(map, marker9);
+      });
+  map.addListener( 'click', function() {
+    infowindow9.close();
+  });
+}
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoL6StXEWkKTCBhjvvr4MMWC2uZ76A8q4&callback=initMap">
+</script>
