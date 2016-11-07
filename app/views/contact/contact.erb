@@ -36,63 +36,7 @@
 
   							<h3>Locations</h3>
 
-  							<ul class="list-plus">
-  								<li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										Upper West Side
-  									</a>
-  								</li>
-
-  								<li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										Upper East Side
-  									</a>
-  								</li>
-
-  								<li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										Washington Heights
-  									</a>
-  								</li>
-
-                  <li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										East Harlem
-  									</a>
-  								</li>
-
-                  <li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										Huntington (Long Island)
-  									</a>
-  								</li>
-
-  								<li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										Morris Park (Bronx)
-  									</a>
-  								</li>
-
-                  <li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										Bedford-Stuyvesant (Brooklyn)
-  									</a>
-  								</li>
-
-                  <li>
-  									<a href="#">
-  										<i class="fa fa-plus"></i>
-  										Coney Island (Brooklyn)
-  									</a>
-  								</li>
-  							</ul><!-- /.list-plus -->
+                <%= render 'locations_list' %>
   						</div><!-- /.widget widget-categories -->
   					</div><!-- /.widgets -->
   				</div><!-- /.sidebar -->
@@ -102,6 +46,27 @@
 
   <%= render "layouts/footer" %>
 </div>
+
+<script type="text/javascript">
+  $( 'ul.locations-list-plus li a' ).click( function( e ) {
+    e.preventDefault();
+
+    var target = e.target.parentElement.getElementsByClassName( 'info-contact-no-show' );
+
+    if ( target.length === 2 ) {
+      var target_html_one = $( target[ 0 ] ).html();
+      var target_html_two = $( target[ 1 ] ).html();
+
+      $( '.event-body blockquote' ).remove();
+      $('.event-body').append( target_html_one );
+      $('.event-body').append( target_html_two );
+    } else {
+      var target_html = $( target ).html();
+      $( '.event-body blockquote' ).remove();
+      $('.event-body').append( target_html );
+    };
+  });
+</script>
 
 <script>
   function initMap() {
