@@ -11,8 +11,12 @@ Rails.application.routes.draw do
 
   get "contact" => "contact#contact"
 
-
-
+# Divisions area
+  get "divisions" => "divisions#divisions"
+  get "divisions/specialty" => "divisions#specialty"
+  get "divisions/340b" => "divisions#three"
+  get "divisions/ltc" => "divisions#long_term_care"
+  get "divisions/retail" => "divisions#retail"
 
 
 

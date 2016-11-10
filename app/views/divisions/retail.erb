@@ -1,0 +1,40 @@
+<div class="wrapper">
+
+  <%= render "header" %>
+
+	<div class="intro intro-small">
+		<div class="intro-image fullsize-image-container" data-stellar-background-ratio="0.54">
+			<%= image_tag( 'intro2.jpg', class: "fullsize-image", method: :get ) %>
+		</div><!-- /.intro-image -->
+
+		<div class="row">
+			<div class="intro-caption">
+				<h5>Quick RX</h5>
+
+				<h2>Our Divisions</h2>
+			</div><!-- /.intro-caption -->
+		</div><!-- /.row -->
+	</div><!-- /.intro intro-small -->
+
+	<div class="main grey">
+    <div class="columns large-12">
+      <p class="breadcrumbs">
+      </p><!-- /.breadcrumbs -->
+    </div><!-- /.columns large-12 -->
+
+		<div class="row">
+			<div class="columns large-8 medium-7 right">
+				<div class="content">
+					<%= render 'article_retail' %>
+				</div><!-- /.content -->
+			</div><!-- /.columns large-8 -->
+
+      <%= render 'widgets_list' %>
+
+		</div><!-- /.row -->
+    <%# render "ad" %>
+	</div><!-- /.main -->
+
+  <%= render "layouts/footer" %>
+
+</div><!-- /.wrapper -->
