@@ -5,6 +5,10 @@ $( document ).ready( function() {
     window.location = "http://quickrx.herokuapp.com/divisions/retail"
   });
 
+  if ( window.location.pathname.split( '/' )[ 1 ] === 'divisions' ) {
+    document.getElementsByClassName('intro-caption')[ 0 ].hidden = true
+  };
+
 
   // $( 'ul.list-services li a' ).on( 'click', function( e ) {
   //   e.preventDefault();
