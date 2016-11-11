@@ -15,6 +15,7 @@ Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 Rails.application.config.assets.paths << "#{Rails.root}/app/assets/videos"
 
 Rails.application.config.assets.precompile += %w( style.css )
+Rails.application.config.assets.precompile += %w( component_loading.css )
 
 Rails.application.config.assets.precompile += %w( app.js )
 Rails.application.config.assets.precompile += %w( jquery.stellar.min.js )

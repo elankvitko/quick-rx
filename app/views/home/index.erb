@@ -6,9 +6,16 @@
 	<meta http-equiv="x-ua-compatible" content="IE=edge" >
 	<title>Quick RX</title>
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
-	<link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+
+	<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <%= image_tag( 'logo_loader.png', class: 'img-responsive' ) %>
+	</div>
+
 <div class="wrapper">
 
 	<%= render "header" %>
