@@ -1,0 +1,48 @@
+<% @posts.each do | post | %>
+  <% @date_string = '' %>
+
+  <% post.created_at.strftime("%B %d, %Y").split(' ').each_with_index do | t, idx | %>
+      <% if idx == 0 %>
+        <% @date_string << t[ 0..2 ] + ' ' %>
+      <% else %>
+        <% @date_string << t + ' ' %>
+      <% end %>
+  <% end %>
+
+  <li class="event">
+    <div class="event-date" itemprop="datePublished">
+      <p><%= @date_string %></p>
+    </div>
+
+    <div class="event-box">
+      <div class="event-image">
+        <%= image_tag( 'slide2' ) %>
+      </div>
+    </div>
+
+    <div class="event-body" itemprop="articleBody">
+      <h4>
+        <%= post.title %>
+        <!-- <a href="#" itemprop="url">Awesome Gallery post</a> -->
+      </h4>
+
+      <p><%= post.body[ 0..250 ] %></p>
+    </div><!-- /.event-body -->
+
+    <div class="event-meta">
+      <ul class="list-event-meta">
+        <li>
+          <i class="fa fa-user"></i>
+          <%= "#{post.user.first_name} #{post.user.last_name}" %>
+        </li>
+
+        <li>
+          <%= link_to news_path( post.id ), class: 'link' do %>
+            <i class="fa fa-plus"></i>
+            Know More
+          <% end %>
+        </li>
+      </ul>
+    </div><!-- /.event-meta -->
+  </li><!-- /.event -->
+<% end %>

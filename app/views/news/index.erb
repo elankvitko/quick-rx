@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <%= render 'header' %>
+  	<%= render 'news_index_header_image' %>
+
+  	<div class="main grey" itemscope itemtype="https://schema.org/BlogPosting">
+  		<div class="row">
+  			<div class="columns large-8 medium-7">
+  				<div class="content">
+  					<ol class="events">
+  						<%= render 'news_index_posts' %>
+  					</ol><!-- /.events -->
+  					<div class="paging">
+  						<ul>
+  							<li>
+  								<a href="#">1</a>
+  							</li>
+  						</ul>
+  					</div><!-- /.paging -->
+  				</div><!-- /.content -->
+  			</div><!-- /.columns large-8 -->
+
+  			<div class="columns large-4 medium-5">
+  				<div class="sidebar">
+  					<div class="widgets">
+  						<%= render 'widget_recent_posts' %>
+  						<%= render 'widget_search' %>
+              <%= render 'widget_tags' %>
+              <%= render 'widget_social' %>
+  					</div><!-- /.widgets -->
+  				</div><!-- /.sidebar -->
+  			</div><!-- /.columns large-4 -->
+  		</div><!-- /.row -->
+  	</div><!-- /.main -->
+  <%= render 'layouts/footer' %>
+</div><!-- /.wrapper -->

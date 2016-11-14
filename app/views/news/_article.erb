@@ -1,0 +1,27 @@
+<article class="event article-single-event">
+  <div class="event-date" itemprop="datePublished">
+    <p><%= @post.created_at.strftime("%B %d, %Y") %></p>
+  </div><!-- /.event-date -->
+
+  <div class="event-box">
+    <div class="event-image">
+      <%= image_tag( 'slide2' ) %>
+    </div><!-- /.event-image -->
+
+
+
+    <div class="event-meta">
+      <ul class="list-event-meta">
+        <li>
+          <i class="fa fa-user"></i>
+          <%= "#{@post.user.first_name} #{@post.user.last_name}" %>
+        </li>
+      </ul>
+    </div><!-- /.event-meta -->
+
+
+    <div class="event-body" itemprop="articleBody">
+      <%= @post.body %>
+    </div><!-- /.event-body -->
+  </div><!-- /.event-box -->
+</article><!-- /.event article-single-event -->

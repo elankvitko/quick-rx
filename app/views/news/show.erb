@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <%= render 'header' %>
+    <div class="intro intro-small">
+      <div class="intro-image fullsize-image-container" data-stellar-background-ratio="0.54">
+        <%= image_tag( 'intro9' ) %>
+      </div><!-- /.intro-image -->
+    </div><!-- /.intro intro-small -->
+
+    <div class="main grey">
+      <div class="row">
+        <div class="columns large-12">
+          <p class="breadcrumbs">
+          </p><!-- /.breadcrumbs -->
+        </div><!-- /.columns large-12 -->
+
+        <div class="columns large-8 medium-7">
+          <div class="content" itemscope itemtype="https://schema.org/BlogPosting">
+
+            <%= render 'article' %>
+
+            <%= render 'comments' %>
+
+            <% if user_signed_in? %>
+              <%= render 'add_comment' %>
+            <% end %>
+          </div><!-- /.content -->
+        </div><!-- /.columns large-8 -->
+
+        <div class="columns large-4 medium-5">
+          <div class="sidebar">
+            <div class="widgets">
+              <%= render 'widget_search' %>
+              <%= render 'widget_recent_posts' %>
+              <%= render 'widget_social' %>
+            </div><!-- /.widgets -->
+          </div><!-- /.sidebar -->
+        </div><!-- /.columns large-4 -->
+      </div><!-- /.row -->
+    </div><!-- /.main -->
+  <%= render 'layouts/footer' %>
+</div><!-- /.wrapper -->

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get "divisions/retail" => "divisions#retail"
 
 
+  resources :news
+
 
 
 

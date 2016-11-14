@@ -31,7 +31,11 @@
         </ul>
       </div><!-- /.socials -->
 
-      <a href="#section-book-appointment" class="button btn-light-blue waypoint">Contact Us</a>
+      <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'button btn-light-blue waypoint' %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: 'button btn-light-blue waypoint' %>
+      <% end %>
     </div><!-- /.columns large-6 -->
   </div><!-- /.header-bar row -->
 
@@ -179,6 +183,10 @@
               Elements
             </a>
           </li> -->
+
+          <li>
+            <%= link_to "News", news_index_path %>
+          </li>
 
           <li class="current">
             <%= link_to "Contact", contact_path %>

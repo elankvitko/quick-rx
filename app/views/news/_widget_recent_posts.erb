@@ -1,0 +1,27 @@
+<div class="widget widget-posts">
+  <h4>CHOOSE</h4>
+
+  <h3>RANDOM POSTS</h3>
+
+  <ol class="list-simple-posts">
+    <% @posts.shuffle.each_with_index do | post, idx | %>
+      <% if idx == 3 %>
+        <% break %>
+      <% end %>
+
+      <li>
+        <a href="#">
+          <span class="image">
+            <img src="assets/images/temp/post.jpg" alt="" />
+          </span>
+
+          <span class="info">
+            <span class="title"><%= post.title %></span>
+
+            <span class="meta"><%= post.created_at.strftime("%B %d, %Y") %></span>
+          </span>
+        </a>
+      </li>
+    <% end %>
+  </ol><!-- /.list-simple-posts -->
+</div><!-- /.widget widget-posts -->

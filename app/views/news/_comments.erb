@@ -1,0 +1,36 @@
+<section class="event section-event-comments" itemscope itemtype="https://schema.org/UserComments">
+  <div class="section-head event-date">
+    <p>COMMENTS</p>
+  </div><!-- /.event-date -->
+
+  <div class="section-body event-body">
+    <ol class="comments">
+      <% if @comments.empty? %>
+        <p>
+          There are no comments here yet. Be the first to leave one!
+        </p>
+      <% else %>
+        <% @comments.each do | comment | %>
+          <li class="comment">
+            <div class="comment-body">
+              <h4>
+                <%= "#{comment.user.first_name} #{comment.user.last_name}" %>
+                <span class="meta" itemprop="commentTime"><%= comment.created_at.strftime("%B %d, %Y") %></span><!-- /.meta -->
+              </h4>
+
+              <div class="comment-entry" itemprop="commentText">
+                <p><%= comment.body %></p>
+              </div><!-- /.comment-entry -->
+            </div><!-- /.comment-body -->
+          </li><!-- /.comment -->
+        <% end %>
+      <% end %>
+    </ol><!-- /.comments -->
+  </div><!-- /.section-body event-body -->
+
+  <% if !user_signed_in? %>
+    <p>
+      You must be logged in to leave a comment! <%= link_to 'Login', new_user_session_path %> or <%= link_to 'Sign Up Here', new_user_registration_path %>
+    </p>
+  <% end %>
+</section><!-- /.section-event-comments -->
