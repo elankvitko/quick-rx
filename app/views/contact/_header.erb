@@ -1,7 +1,11 @@
 <header class="header">
   <div class="header-bar row">
     <div class="columns large-6 medium-6 mobile-hidden">
-      <p>Welcome to QuickRX</p>
+      <% if user_signed_in? %>
+        <p>Welcome to QuickRX <%= current_user.first_name %></p>
+      <% else %>
+        <p>Welcome to QuickRX</p>
+      <% end %>
     </div><!-- /.columns large-6 -->
 
     <div class="columns large-6 medium-6">

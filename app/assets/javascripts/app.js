@@ -7,8 +7,8 @@
         $('body').addClass('loaded');
     }, 2000);
 
-		var $win = $(window);
-		var $doc = $(document);
+		// var $win = $(window);
+		// var $doc = $(document);
 
 		// Load Foundation
 		$(document).foundation();
@@ -41,7 +41,7 @@
 		});
 
 		var sliderTestimonials;
-		$win.on('load', function () {
+		$( window ).on('load', function () {
 			sliderTestimonials = $('.slider-testimonials .slides').bxSlider({
 				auto: true,
 				pager: false,
@@ -66,14 +66,14 @@
 		$('.field-date').fdatepicker();
 
 		// Waypoint
-		var itemIndex;
-		$('.waypoint').on('click', function (event) {
-			event.preventDefault();
-
-			itemIndex = $(this).attr('href');
-
-			$('body, html').animate({scrollTop: $(itemIndex).offset().top - 40}, 1000)
-		});
+		// var itemIndex;
+		// $('.waypoint').on('click', function (event) {
+		// 	event.preventDefault();
+		//
+		// 	itemIndex = $(this).attr('href');
+		// 	debugger;
+		// 	$('body, html').animate({scrollTop: $(itemIndex).offset().top - 40}, 1000)
+		// });
 
 		// Tabs
 		var currentItem;
