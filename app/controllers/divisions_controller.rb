@@ -1,5 +1,6 @@
 class DivisionsController < ApplicationController
   def divisions
+    redirect_to divisions_retail_path
   end
 
   def specialty

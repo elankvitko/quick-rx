@@ -18771,3 +18771,10 @@ form.new_user {
 input.textarea {
   height: 160px;
 }
+
+
+// Background image
+
+div.intro-image .fullsize-image-container {
+  background-position: inherit !important;
+}
