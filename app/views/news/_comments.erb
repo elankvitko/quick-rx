@@ -10,7 +10,7 @@
           There are no comments here yet. Be the first to leave one!
         </p>
       <% else %>
-        <% @comments.each do | comment | %>
+        <% @comments.reverse.each do | comment | %>
           <li class="comment">
             <div class="comment-body">
               <h4>

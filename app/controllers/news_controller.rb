@@ -7,5 +7,6 @@ class NewsController < ApplicationController
     @posts = Post.all
     @post = Post.find( params[ 'id' ] )
     @comments = @post.comments
+    @new_comment = Comment.new
   end
 end
