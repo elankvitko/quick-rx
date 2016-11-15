@@ -1,0 +1,12 @@
+<li class="comment">
+  <div class="comment-body">
+    <h4>
+      <%= "#{@comment.user.first_name} #{@comment.user.last_name}" %>
+      <span class="meta" itemprop="commentTime"><%= @comment.created_at.strftime("%B %d, %Y") %></span><!-- /.meta -->
+    </h4>
+
+    <div class="comment-entry" itemprop="commentText">
+      <p><%= @comment.body %></p>
+    </div><!-- /.comment-entry -->
+  </div><!-- /.comment-body -->
+</li><!-- /.comment -->

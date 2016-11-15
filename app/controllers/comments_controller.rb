@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new( comment_params )
-    if user_signed_in?
-      @comment.save
-      redirect_to news_path( params[ 'comment' ][ 'post_id' ] )
+
+    if request.xhr?
+      if user_signed_in?
+        @comment.save
+      end
+      render partial: "new", layout: false, locals: { comment: @comment }
     else
       redirect_to root_path
     end
