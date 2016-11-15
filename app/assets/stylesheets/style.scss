@@ -18778,3 +18778,9 @@ input.textarea {
 div.intro-image .fullsize-image-container {
   background-position: inherit !important;
 }
+
+// sticky header
+div.wrapper div#sticker-sticky-wrapper header#sticker {
+  background-color: #fff;
+  z-index: 999 !important;
+}

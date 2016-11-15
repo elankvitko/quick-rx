@@ -2,6 +2,8 @@
 	"use strict";
 
 	$(document).ready(function() {
+		$("#sticker").sticky({topSpacing:0});
+
 		$( ".section-add-comment" ).on( 'submit', '.new_comment', function( e ) {
 			e.preventDefault();
 			var url = e.target.action;
