@@ -4,28 +4,13 @@
   <h3>TAGS</h3>
 
   <ul class="list-tags">
-    <li>
-      <a href="#">CArdiology</a>
-    </li>
-
-    <li>
-      <a href="#">heart replacement</a>
-    </li>
-
-    <li>
-      <a href="#">Transplant services</a>
-    </li>
-
-    <li>
-      <a href="#">dental care</a>
-    </li>
-
-    <li>
-      <a href="#">Nurology</a>
-    </li>
-
-    <li>
-      <a href="#">cancer treatment</a>
-    </li>
+    <% @tags.each_with_index do | tag, idx | %>
+      <% if idx == 6 %>
+        <% break %>
+      <% end %>
+      <li>
+        <%= link_to "#{tag.tag}", news_path( tag.posts.first.id ) %>
+      </li>
+    <% end %>
   </ul><!-- /.list-tags -->
 </div><!-- /.widget widget-tags -->
