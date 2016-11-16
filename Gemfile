@@ -42,6 +42,8 @@ gem 'sticky-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'tinymce-rails'
+
 gem 'pry-rails', :group => :development
 
 group :development, :test do

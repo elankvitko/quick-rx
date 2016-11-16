@@ -5,11 +5,10 @@
 
   <div class="section-body event-box">
     <div class="form form-add-comment">
-
       <%= form_for @new_comment do |f| %>
         <label for="body">Write a comment</label>
           <div class="input-field">
-            <%=f.text_field :body, hide_label: true, class: 'textarea' %>
+            <%=f.text_area :body, hide_label: true, class: 'textarea' %>
           </div>
           <%=f.hidden_field :user_id, :value => current_user.id %>
           <%=f.hidden_field :post_id, :value => @post.id %>

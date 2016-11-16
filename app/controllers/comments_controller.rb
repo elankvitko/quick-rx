@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new( comment_params )
-
     if request.xhr?
       if user_signed_in?
         @comment.save

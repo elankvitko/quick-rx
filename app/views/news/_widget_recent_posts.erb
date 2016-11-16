@@ -10,17 +10,21 @@
       <% end %>
 
       <li>
-        <a href="#">
-          <span class="image">
-            <img src="assets/images/temp/post.jpg" alt="" />
-          </span>
+        <%= link_to news_path( post.id ) do %>
+            <span class="image">
+              <%= image_tag( 'post.png' ) %>
+            </span>
 
-          <span class="info">
-            <span class="title"><%= post.title %></span>
+            <span class='info'>
+              <span class='title'>
+                <%= post.title %>
+              </span>
 
-            <span class="meta"><%= post.created_at.strftime("%B %d, %Y") %></span>
-          </span>
-        </a>
+              <span class='meta'>
+                <%= post.created_at.strftime( "%B %d, %Y" ) %>
+              </span>
+            </span>
+        <% end %>
       </li>
     <% end %>
   </ol><!-- /.list-simple-posts -->

@@ -11547,6 +11547,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .header-bar .large-6 + .large-6 {
+  // E.K.
+  margin-top: -60px;
   text-align: right;
 }
 
@@ -18783,4 +18785,18 @@ div.intro-image .fullsize-image-container {
 div.wrapper div#sticker-sticky-wrapper header#sticker {
   background-color: #fff;
   z-index: 999 !important;
+}
+
+// Header logos
+
+div.header-bar div.logos {
+  margin-left: 380px;
+}
+
+div.header-bar div.logos img {
+  margin-right: 60px;
+}
+
+div.ek-up {
+  margin-top: -60px;
 }

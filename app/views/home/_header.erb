@@ -1,6 +1,12 @@
 <header id="sticker" class="header">
   <div class="header-bar row">
-    <div class="columns large-6 medium-6 mobile-hidden">
+    <div class="logos mobile-hidden">
+      <%= image_tag( 'logo_urac_pending.png', width: '70px' ) %>
+      <%= image_tag( 'logo_340b.png', width: '60px' ) %>
+      <%= image_tag( 'logo_cuc.png', width: '150px' ) %>
+    </div>
+
+    <div class="columns large-6 medium-6 mobile-hidden ek-up">
       <% if user_signed_in? %>
         <p>Welcome to QuickRX <%= current_user.first_name %></p>
       <% else %>
@@ -8,7 +14,7 @@
       <% end %>
     </div><!-- /.columns large-6 -->
 
-    <div class="columns large-6 medium-6">
+    <div class="columns large-6 medium-6 mobile-hidden">
       <div class="socials">
         <ul>
           <li>
