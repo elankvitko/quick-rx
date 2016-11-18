@@ -1,0 +1,40 @@
+<nav class="nav">
+  <ul class="clearfix">
+    <li class="current">
+      <%= link_to "Home", root_path, method: :get %>
+    </li>
+
+    <li>
+      <%= link_to "Divisions", divisions_path, class: :divisions_nav_link %>
+      <ul class="nav-dropdown">
+        <li>
+          <i class="fa fa-plus"></i>
+          <%= link_to "Retail", divisions_retail_path %>
+        </li>
+
+        <li>
+          <i class="fa fa-plus"></i>
+          <%= link_to "Long Term Care", divisions_ltc_path %>
+        </li>
+
+        <li>
+          <i class="fa fa-plus"></i>
+          <%= link_to "340B", divisions_340b_path %>
+        </li>
+
+        <li>
+          <i class="fa fa-plus"></i>
+          <%= link_to "Specialty Pharmacy", divisions_specialty_path %>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <%= link_to "News", news_index_path %>
+    </li>
+
+    <li>
+      <%= link_to "Contact", contact_path %>
+    </li>
+  </ul>
+</nav><!-- /.nav -->

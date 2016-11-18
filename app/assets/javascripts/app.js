@@ -2,7 +2,10 @@
 	"use strict";
 
 	$(document).ready(function() {
-		$("#sticker").sticky({topSpacing:0});
+		// $("#sticker").sticky({topSpacing:0});
+
+		// Load Foundation
+		$(document).foundation();
 
 		$( ".section-add-comment" ).on( 'submit', '.new_comment', function( e ) {
 			e.preventDefault();
@@ -23,7 +26,7 @@
 
 				$( 'ol.comments' ).prepend( response );
 
-				$( '.input-field input' ).val( '' );
+				$( '.input-field textarea' ).val( '' );
 			});
 		});
 
@@ -33,9 +36,6 @@
 
 		// var $win = $(window);
 		// var $doc = $(document);
-
-		// Load Foundation
-		$(document).foundation();
 
 		// Intro Small
 		$('.intro-small .intro-image').stellar({

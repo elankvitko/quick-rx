@@ -29,7 +29,9 @@ Rails.application.routes.draw do
   resources :news
   resources :comments
 
+# Legal
 
+  get 'legal' => "legal#index"
 
 
   # Error Handling routes
