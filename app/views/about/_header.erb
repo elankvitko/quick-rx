@@ -1,0 +1,63 @@
+<header id="sticker" class="header">
+  <div class="header-bar row">
+    <div class="columns large-6 medium-6 mobile-hidden">
+      <% if user_signed_in? %>
+        <p>Welcome to QuickRX <%= current_user.first_name %></p>
+      <% else %>
+        <p>Welcome to QuickRX</p>
+      <% end %>
+    </div><!-- /.columns large-6 -->
+
+    <div class="columns large-6 medium-6">
+      <div class="socials">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+      </div><!-- /.socials -->
+
+      <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'button btn-light-blue waypoint' %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: 'button btn-light-blue waypoint' %>
+      <% end %>
+    </div><!-- /.columns large-6 -->
+  </div><!-- /.header-bar row -->
+
+  <div class="row">
+    <div class="columns large-3 medium-12">
+      <%= link_to image_tag( "logo.png" ), { action: 'index', controller: 'home' }, class: 'logo', method: :get %>
+    </div><!-- /.columns large-3 -->
+
+    <div class="columns large-7 medium-8">
+      <a href="#" class="btn-menu">
+        <span></span>
+      </a>
+
+      <%= render 'nav' %>
+    </div><!-- /.columns large-6 -->
+
+    <div class="columns large-2 medium-4 mobile-hidden">
+      <p class="phone">
+        <i class="fa fa-mobile"></i>
+        <small>Call Us</small>
+        <a href='tel: 212 249 8202'>212 249 8202</a>
+      </p><!-- /.phone -->
+    </div><!-- /.columns large-3 -->
+  </div><!-- /.row -->
+</header><!-- /.header -->

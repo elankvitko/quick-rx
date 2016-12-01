@@ -7,6 +7,22 @@
 		// Load Foundation
 		$(document).foundation();
 
+		var divisionsLocation = window.location.href
+
+		if ( divisionsLocation.indexOf( 'retail' ) > 0 ) {
+			$( 'a.retail-linked' ).css( { 'color': '#093d88' } );
+			$( 'a.retail-linked span i' ).css( { 'color': '#093d88' } );
+		} else if ( divisionsLocation.indexOf( 'ltc' ) > 0 ) {
+			$( 'a.ltc-linked' ).css( { 'color': '#093d88' } );
+			$( 'a.ltc-linked span i' ).css( { 'color': '#093d88' } );
+		} else if ( divisionsLocation.indexOf( '340b' ) > 0 ) {
+			$( 'a.three-linked' ).css( { 'color': '#093d88' } );
+			$( 'a.three-linked span i' ).css( { 'color': '#093d88' } );
+		} else if ( divisionsLocation.indexOf( 'specialty' ) > 0 ) {
+			$( 'a.specialty-linked' ).css( { 'color': '#093d88' } );
+			$( 'a.specialty-linked span i' ).css( { 'color': '#093d88' } );
+		};
+
 		$( ".section-add-comment" ).on( 'submit', '.new_comment', function( e ) {
 			e.preventDefault();
 			var url = e.target.action;

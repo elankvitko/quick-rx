@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   get "contact" => "contact#contact"
 
+# About
+
+  get 'about' => "about#index"
+
 # Divisions area
   get "divisions" => "divisions#divisions"
   get "divisions/specialty" => "divisions#specialty"
