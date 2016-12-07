@@ -1,0 +1,14 @@
+<%= form_for @todo, url: todos_path, html: { method: :post, class: 'form-new-todo' } do |f| %>
+  <div class="input-fields-todos">
+    <label for="name">Name</label>
+      <%=f.text_area :name, hide_label: true %>
+    <label for="notes">Notes</label>
+      <%=f.text_area :body, hide_label: true %>
+  </div>
+  <%=f.hidden_field :user_id, :value => current_user.id %>
+  <%=f.hidden_field :complete, :value => false %>
+  <%=f.submit "Create Task" %>
+<% end %>
+
+<br>
+<br>

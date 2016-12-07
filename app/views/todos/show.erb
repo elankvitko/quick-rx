@@ -1,0 +1,19 @@
+<h2>
+  <%= @todo.name %>
+</h2>
+
+<p>
+  <%= @todo.body %>
+</p>
+
+<% if !@todo.complete %>
+  <%= form_for @todo, url: todo_path( @todo ), html: { method: :put } do |f| %>
+    <%= f.hidden_field :complete, value: true %>
+    <%=f.submit "Mark Complete" %>
+  <% end %>
+<% else %>
+  <%= form_for @todo, url: todo_path( @todo ), html: { method: :put } do |f| %>
+    <%= f.hidden_field :complete, value: false %>
+    <%=f.submit "Mark Incomplete" %>
+  <% end %>
+<% end %>

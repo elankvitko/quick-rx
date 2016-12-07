@@ -7,6 +7,27 @@
 		// Load Foundation
 		$(document).foundation();
 
+		$( 'form.form-new-todo' ).on( 'submit', function( e ) {
+			e.preventDefault();
+
+		  var info = e.target;
+		  var url = info.action;
+		  var type = info.method;
+		  var data = $( info ).serialize();
+
+		  $.ajax({
+		    url: url,
+		    type: type,
+		    data: data
+		  }).done( function( response ) {
+		    $( '.tasks-table table' ).append( response );
+				$( '.form-new-todo .input-fields-todos textarea' ).val( '' );
+				$( '.minus' ).hide();
+			  $( 'a.new-task-toggle' ).show();
+				$( '.form-new-todo' ).toggle();
+		  });
+		});
+
 		var divisionsLocation = window.location.href
 
 		if ( divisionsLocation.indexOf( 'retail' ) > 0 ) {

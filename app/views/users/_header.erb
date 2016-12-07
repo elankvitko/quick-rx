@@ -1,4 +1,4 @@
-<header class="header">
+<header id="sticker" class="header">
   <div class="header-bar row">
     <div class="columns large-6 medium-6 mobile-hidden">
       <% if user_signed_in? %>
@@ -8,7 +8,7 @@
       <% end %>
     </div><!-- /.columns large-6 -->
 
-    <div class="columns large-6 medium-6 mobile-hidden">
+    <div class="columns large-6 medium-6">
       <div class="socials">
         <ul>
           <li>
@@ -32,8 +32,7 @@
       </div><!-- /.socials -->
 
       <% if user_signed_in? %>
-        <%= link_to "Profile", user_path( current_user.id ), class: 'button btn-light-blue waypoint' %>
-        <%# link_to "Logout", destroy_user_session_path, method: :delete, class: 'button btn-light-blue waypoint' %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'button btn-light-blue waypoint' %>
       <% else %>
         <%= link_to "Login", new_user_session_path, class: 'button btn-light-blue waypoint' %>
       <% end %>

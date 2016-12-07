@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114195702) do
+ActiveRecord::Schema.define(version: 20161207145057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20161114195702) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "days", force: :cascade do |t|
+    t.string   "day",        null: false
+    t.string   "hourbegins", null: false
+    t.string   "hourend",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "post_tags", force: :cascade do |t|
     t.integer  "post_id"
@@ -55,6 +63,17 @@ ActiveRecord::Schema.define(version: 20161114195702) do
 
   add_index "tags", ["tag"], name: "index_tags_on_tag", using: :btree
 
+  create_table "todos", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.text     "body",       null: false
+    t.boolean  "complete",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "todos", ["user_id"], name: "index_todos_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
@@ -80,4 +99,5 @@ ActiveRecord::Schema.define(version: 20161114195702) do
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "users"
+  add_foreign_key "todos", "users"
 end

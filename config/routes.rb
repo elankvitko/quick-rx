@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   Rails.application.routes.draw do
-      devise_for :users, controllers: {
-        sessions: 'users/sessions',
-        registrations: 'users/registrations'
-      }
-    end
+    devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations',
+    }
+  end
+
+  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :todos
+  resources :days, only: [:show, :update]
+
 
   get 'errors/not_found'
 

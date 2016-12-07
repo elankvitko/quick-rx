@@ -1,0 +1,109 @@
+<div class="wrapper">
+  <%= render 'header' %>
+
+  <div class="main grey">
+		<div class="row">
+			<div class="columns large-12">
+				<p class="breadcrumbs">
+				</p><!-- /.breadcrumbs -->
+			</div><!-- /.columns large-12 -->
+
+      <h1 class='dashboard-head'>My Dashboard</h1>
+
+      <br>
+
+			<div class="columns large-8 medium-7">
+				<div class="content">
+					<article class="event article-single-event">
+
+						<div class="entry-content">
+							<div class="event-body" itemprop="articleBody">
+                <div class="dashboard-tables">
+                  <div class="tasks-table">
+                    <h3 class='dashboard-table-headers'>To-Do Lists</h4>
+
+                    <table>
+                      <tr>
+                        <th>Task</th>
+                        <th>Complete</th>
+                      </tr>
+                      <% @todos.each do | todo | %>
+                        <tr>
+                          <td><%= link_to "#{ todo.name }", todo_path( todo.id ) %></td>
+                          <% if todo.complete == true %>
+                            <td><h3>&#10004;</h3></td>
+                          <% end %>
+                        </tr>
+                      <% end %>
+                    </table>
+
+                    <a href="#" class='new-task-toggle'>Create New Task +</a>
+                    <a href="#" class='minus'>Create New Task -</a>
+
+                    <%= render 'todos/new_todo' %>
+                  </div>
+
+                  <div class="reports-table">
+                    <h3 class='dashboard-table-headers'>Run Reports</h3>
+
+                    <table>
+                      <tr>
+                        <th>Report Type</th>
+                      </tr>
+                      <tr>
+                        <td><a href="http://192.168.0.11/pc/Reports/BusinessPerformanceRpt.aspx" target='_blank'>Business Performance</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="http://192.168.0.11/pc/Reports/RxsFilledReport.aspx" target='_blank'>RXs Filled</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="http://192.168.0.11/pc/Reports/UnderPaidClaimsRpt.aspx" target='_blank'>Underpaid Claims</a></td>
+                      </tr>
+                      <tr>
+                        <td><a href="http://192.168.0.11/pc/Reports/ControlDrugDispenseRpt.aspx" target='_blank'>Control Drug Dispense</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+							</div><!-- /.event-body -->
+						</div><!-- /.event-box -->
+					</article><!-- /.event article-single-event -->
+
+				</div><!-- /.content -->
+			</div><!-- /.columns large-8 -->
+
+			<div class="columns large-4 medium-5">
+				<div class="sidebar">
+					<div class="widgets">
+						<div class="widget widget-categories">
+							<h4>Quick</h4>
+
+							<h3>Actions</h3>
+
+							<ul class="list-plus">
+								<li>
+									<a href="#">
+										<i class="fa fa-plus"></i>
+										Change Corporate Hours
+									</a>
+
+                  <%= form_for @day, url: day_path, html: { method: :put } do |f| %>
+                    <label for="weekday">Start Time</label>
+                    <%= f.text_field :hourbegins, placeholder: @day.hourbegins %>
+                    <label for="weekday">End Time</label>
+                    <%= f.text_field :hourend, placeholder: @day.hourend %>
+                    <%= f.hidden_field :id, value: @day.id %>
+                    <%= f.submit 'Change Hours' %>
+                  <% end %>
+								</li>
+							</ul><!-- /.list-plus -->
+						</div><!-- /.widget widget-categories -->
+					</div><!-- /.widgets -->
+				</div><!-- /.sidebar -->
+			</div><!-- /.columns large-4 -->
+		</div><!-- /.row -->
+	</div><!-- /.main -->
+  <%= render 'layouts/footer' %>
+</div>
+
+<%= javascript_include_tag "todos.js" %>
