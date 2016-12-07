@@ -2,13 +2,12 @@
 	"use strict";
 
 	$(document).ready(function() {
-		// $("#sticker").sticky({topSpacing:0});
-
-		// Load Foundation
-		$(document).foundation();
 
 		// var $win = $(window);
 		var $doc = $(document);
+
+		// Load Foundation
+		$(document).foundation();
 
 		// Intro Small
 		$('.intro-small .intro-image').stellar({
@@ -31,14 +30,14 @@
 
 		//Intro Slider
 		var introSlider = $('.intro-slider .slides').bxSlider({
-			auto: false,
+			auto: true,
 			pager: false,
 			autoControls: true,
 			autoHover: true
 		});
 
 		var sliderTestimonials;
-		$( window ).on('load', function () {
+		$win.on('load', function () {
 			sliderTestimonials = $('.slider-testimonials .slides').bxSlider({
 				auto: true,
 				pager: false,
@@ -68,7 +67,7 @@
 		// 	event.preventDefault();
 		//
 		// 	itemIndex = $(this).attr('href');
-		// 	debugger;
+		//
 		// 	$('body, html').animate({scrollTop: $(itemIndex).offset().top - 40}, 1000)
 		// });
 

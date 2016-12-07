@@ -36,3 +36,8 @@ $( 'form.form-new-todo' ).on( 'submit', function( e ) {
     $( '.form-new-todo' ).toggle();
   });
 });
+
+$( '.checkbox_delete' ).on( 'change', function( e ) {
+  var target = e.target.parentElement.childNodes[ 9 ]
+  $( target ).click();
+});

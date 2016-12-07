@@ -18,6 +18,12 @@ class TodosController < ApplicationController
     end
   end
 
+  def destroy
+    @todo = Todo.find_by( id: todo_params[ :id ] )
+    Todo.destroy( @todo.id )
+    redirect_to user_path( current_user.id )
+  end
+
   def show
     @todo = Todo.find_by_id( params[ 'id' ] )
   end
@@ -25,6 +31,6 @@ class TodosController < ApplicationController
   private
 
     def todo_params
-      params.require( :todo ).permit( :name, :body, :complete, :user_id )
+      params.require( :todo ).permit( :id, :name, :body, :complete, :user_id )
     end
 end

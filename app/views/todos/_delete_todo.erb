@@ -1,0 +1,5 @@
+<%= form_for todo, url: todo_path, html: { method: :delete, class: 'form-delete-todo' } do |f| %>
+  <%= f.hidden_field :id, value: todo.id %>
+  <%= f.check_box :name, class: 'checkbox_delete' %>
+  <%= f.submit 'Delete', class: 'submit-todo-delete' %>
+<% end %>
