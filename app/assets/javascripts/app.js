@@ -7,7 +7,7 @@
 		// Load Foundation
 		$(document).foundation();
 
-		var $win = $(window);
+		// var $win = $(window);
 		var $doc = $(document);
 
 		// Intro Small
