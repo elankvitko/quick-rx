@@ -7,72 +7,8 @@
 		// Load Foundation
 		$(document).foundation();
 
-		$( 'form.form-new-todo' ).on( 'submit', function( e ) {
-			e.preventDefault();
-
-		  var info = e.target;
-		  var url = info.action;
-		  var type = info.method;
-		  var data = $( info ).serialize();
-
-		  $.ajax({
-		    url: url,
-		    type: type,
-		    data: data
-		  }).done( function( response ) {
-		    $( '.tasks-table table' ).append( response );
-				$( '.form-new-todo .input-fields-todos textarea' ).val( '' );
-				$( '.minus' ).hide();
-			  $( 'a.new-task-toggle' ).show();
-				$( '.form-new-todo' ).toggle();
-		  });
-		});
-
-		var divisionsLocation = window.location.href
-
-		if ( divisionsLocation.indexOf( 'retail' ) > 0 ) {
-			$( 'a.retail-linked' ).css( { 'color': '#093d88' } );
-			$( 'a.retail-linked span i' ).css( { 'color': '#093d88' } );
-		} else if ( divisionsLocation.indexOf( 'ltc' ) > 0 ) {
-			$( 'a.ltc-linked' ).css( { 'color': '#093d88' } );
-			$( 'a.ltc-linked span i' ).css( { 'color': '#093d88' } );
-		} else if ( divisionsLocation.indexOf( '340b' ) > 0 ) {
-			$( 'a.three-linked' ).css( { 'color': '#093d88' } );
-			$( 'a.three-linked span i' ).css( { 'color': '#093d88' } );
-		} else if ( divisionsLocation.indexOf( 'specialty' ) > 0 ) {
-			$( 'a.specialty-linked' ).css( { 'color': '#093d88' } );
-			$( 'a.specialty-linked span i' ).css( { 'color': '#093d88' } );
-		};
-
-		$( ".section-add-comment" ).on( 'submit', '.new_comment', function( e ) {
-			e.preventDefault();
-			var url = e.target.action;
-			var type = e.target.method;
-			var data = $( e.target ).serialize();
-
-			$.ajax({
-				url: url,
-				type: type,
-				data: data
-			}).done( function( response ) {
-				var nocomment = $( '.no-comments-yet' );
-
-				if ( nocomment.length > 0 ) {
-					nocomment.hide();
-				};
-
-				$( 'ol.comments' ).prepend( response );
-
-				$( '.input-field textarea' ).val( '' );
-			});
-		});
-
-		setTimeout(function() {
-        $('body').addClass('loaded');
-    }, 2000);
-
-		// var $win = $(window);
-		// var $doc = $(document);
+		var $win = $(window);
+		var $doc = $(document);
 
 		// Intro Small
 		$('.intro-small .intro-image').stellar({
