@@ -81,20 +81,13 @@
 							<h3>Actions</h3>
 
 							<ul class="list-plus">
-								<li>
+								<li class='change-hours-list-item'>
 									<a href="#">
 										<i class="fa fa-plus"></i>
 										Change Corporate Hours
 									</a>
 
-                  <%= form_for @day, url: day_path, html: { method: :put } do |f| %>
-                    <label for="weekday">Start Time</label>
-                    <%= f.text_field :hourbegins, placeholder: @day.hourbegins %>
-                    <label for="weekday">End Time</label>
-                    <%= f.text_field :hourend, placeholder: @day.hourend %>
-                    <%= f.hidden_field :id, value: @day.id %>
-                    <%= f.submit 'Change Hours' %>
-                  <% end %>
+                  <%= render 'days/update_hours' %>
 								</li>
 							</ul><!-- /.list-plus -->
 						</div><!-- /.widget widget-categories -->
@@ -107,3 +100,4 @@
 </div>
 
 <%= javascript_include_tag "todos.js" %>
+<%= javascript_include_tag "days.js" %>
