@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :todos
+  has_many :items
 
   validates :first_name, :last_name, presence: true
 

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :todos
   resources :days, only: [:show, :update]
-
+  resources :items
 
   get 'errors/not_found'
 
