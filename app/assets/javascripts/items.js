@@ -26,7 +26,7 @@ $( 'form .submit-new-item' ).click( function( e ) {
   }).done( function( response ) {
     $( '.new-item-form' ).hide();
     $( 'a.open-item-order i' ).toggleClass( 'fa-minus', 'fa-plus' );
-    $( '.request-item-order' ).append( response );
+    $( response ).insertAfter( '.first-position' );
     $( '.new-item-form' )[ 0 ].reset();
   });
 });

@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
           @item.update_attributes( link: 'http://' + @item.link )
         end
 
-        render partial: "items_success", layout: false
+        render partial: "items_success", layout: false, locals: { item: @item }
       end
     end
   end

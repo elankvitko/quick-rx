@@ -76,7 +76,7 @@
                     <h3 class='open-orders-header'>Open Order Queue</h3>
 
                     <table>
-                      <tr>
+                      <tr class='first-position'>
                         <th>Item</th>
                         <th>Link</th>
                         <th>Pharmacy</th>
@@ -86,7 +86,7 @@
                       <% @all_items.each do | item | %>
                         <tr>
                           <td><%= item.name %></td>
-                          <% if item.link %>
+                          <% if item.link != 'http://' %>
                             <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
                           <% else %>
                             <td></td>

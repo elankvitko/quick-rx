@@ -1,3 +1,10 @@
-<p class='success-item-message'>
-  Your item was successfully added to the queue!
-</p>
+<tr>
+  <td><%= item.name %></td>
+  <% if item.link != 'http://' %>
+    <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
+  <% else %>
+    <td></td>
+  <% end %>
+  <td><%= item.pharmacy.name %></td>
+  <td><%= item.user.first_name %></td>
+</tr>
