@@ -1,13 +1,14 @@
 class ItemsController < ApplicationController
   def create
     @item = Item.new( item_params )
-
     if request.xhr?
       if @item.save
         link = @item.link
 
         if link[ 0..6 ] != 'http://'
-          @item.update_attributes( link: 'http://' + @item.link )
+          if link[ 0..7 ] != 'https://'
+            @item.update_attributes( link: 'http://' + @item.link )
+          end
         end
 
         render partial: "items_success", layout: false, locals: { item: @item }
