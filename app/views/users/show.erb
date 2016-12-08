@@ -72,31 +72,33 @@
                     </table>
                   </div>
 
-                  <div class="open-orders-table">
-                    <h3 class='open-orders-header'>Open Order Queue</h3>
+                  <% if current_user.admin %>
+                    <div class="open-orders-table">
+                      <h3 class='open-orders-header'>Open Order Queue</h3>
 
-                    <table>
-                      <tr class='first-position'>
-                        <th>Item</th>
-                        <th>Link</th>
-                        <th>Pharmacy</th>
-                        <th>Requestee</th>
-                      </tr>
-
-                      <% @all_items.each do | item | %>
-                        <tr>
-                          <td><%= item.name %></td>
-                          <% if item.link != 'http://' %>
-                            <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
-                          <% else %>
-                            <td></td>
-                          <% end %>
-                          <td><%= item.pharmacy.name %></td>
-                          <td><%= "#{ item.user.first_name } #{ item.user.last_name }" %></td>
+                      <table>
+                        <tr class='first-position'>
+                          <th>Item</th>
+                          <th>Link</th>
+                          <th>Pharmacy</th>
+                          <th>Requestee</th>
                         </tr>
-                      <% end %>
-                    </table>
-                  </div>
+
+                        <% @all_items.each do | item | %>
+                          <tr>
+                            <td><%= item.name %></td>
+                            <% if item.link != 'http://' %>
+                              <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
+                            <% else %>
+                              <td></td>
+                            <% end %>
+                            <td><%= item.pharmacy.name %></td>
+                            <td><%= "#{ item.user.first_name } #{ item.user.last_name }" %></td>
+                          </tr>
+                        <% end %>
+                      </table>
+                    </div>
+                  <% end %>
                 </div>
 							</div><!-- /.event-body -->
 						</div><!-- /.event-box -->
