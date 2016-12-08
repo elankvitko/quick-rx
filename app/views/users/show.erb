@@ -71,6 +71,32 @@
                       </tr>
                     </table>
                   </div>
+
+                  <div class="open-orders-table">
+                    <h3 class='open-orders-header'>Open Order Queue</h3>
+
+                    <table>
+                      <tr>
+                        <th>Item</th>
+                        <th>Link</th>
+                        <th>Pharmacy</th>
+                        <th>Requestee</th>
+                      </tr>
+
+                      <% @all_items.each do | item | %>
+                        <tr>
+                          <td><%= item.name %></td>
+                          <% if item.link %>
+                            <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
+                          <% else %>
+                            <td></td>
+                          <% end %>
+                          <td><%= item.pharmacy.name %></td>
+                          <td><%= item.user.first_name %></td>
+                        </tr>
+                      <% end %>
+                    </table>
+                  </div>
                 </div>
 							</div><!-- /.event-body -->
 						</div><!-- /.event-box -->
@@ -89,13 +115,21 @@
 
 							<ul class="list-plus">
 								<li class='change-hours-list-item'>
-									<a href="#">
+									<a href="#" class='open-hours-form'>
 										<i class="fa fa-plus"></i>
 										Change Corporate Hours
 									</a>
 
                   <%= render 'days/update_hours' %>
 								</li>
+                <li class='request-item-order'>
+                  <a href="#" class='open-item-order'>
+                    <i class="fa fa-plus"></i>
+                    Request Item Order
+                  </a>
+
+                  <%= render 'items/new_item_form' %>
+                </li>
 							</ul><!-- /.list-plus -->
 						</div><!-- /.widget widget-categories -->
 					</div><!-- /.widgets -->
@@ -108,3 +142,4 @@
 
 <%= javascript_include_tag "todos.js" %>
 <%= javascript_include_tag "days.js" %>
+<%= javascript_include_tag "items.js" %>
