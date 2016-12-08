@@ -92,7 +92,7 @@
                             <td></td>
                           <% end %>
                           <td><%= item.pharmacy.name %></td>
-                          <td><%= item.user.first_name %></td>
+                          <td><%= "#{ item.user.first_name } #{ item.user.last_name }" %></td>
                         </tr>
                       <% end %>
                     </table>
