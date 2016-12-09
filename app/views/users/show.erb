@@ -76,33 +76,53 @@
 
                   <br>
 
-                  <% if current_user.admin %>
-                    <div class="open-orders-table">
-                      <h3 class='open-orders-header'>Open Order Queue</h3>
+                  <div class="open-orders-table">
+                    <h3 class='open-orders-header'>Order Queue</h3>
 
-                      <table>
-                        <tr class='first-position'>
-                          <th>Item</th>
-                          <th>Link</th>
-                          <th>Pharmacy</th>
-                          <th>Requestee</th>
-                        </tr>
-
-                        <% @all_items.each do | item | %>
-                          <tr>
-                            <td><%= item.name %></td>
-                            <% if item.link != 'http://' %>
-                              <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
-                            <% else %>
-                              <td></td>
-                            <% end %>
-                            <td><%= item.pharmacy.name %></td>
-                            <td><%= "#{ item.user.first_name } #{ item.user.last_name }" %></td>
-                          </tr>
+                    <table>
+                      <tr class='first-position'>
+                        <th>Item</th>
+                        <th>Link</th>
+                        <th>Pharmacy</th>
+                        <th>Requestee</th>
+                        <th>Order Status</th>
+                        <% if current_user.admin %>
+                          <th>Complete?</th>
                         <% end %>
-                      </table>
-                    </div>
-                  <% end %>
+                      </tr>
+
+                      <% @all_items.each do | item | %>
+                        <tr>
+                          <td><%= item.name %></td>
+                          <% if item.link != 'http://' %>
+                            <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
+                          <% else %>
+                            <td></td>
+                          <% end %>
+                          <td><%= item.pharmacy.name %></td>
+                          <td><%= "#{ item.user.first_name } #{ item.user.last_name }" %></td>
+                          <% if item.complete %>
+                            <td>Ordered</td>
+                          <% else %>
+                            <td>In Queue</td>
+                          <% end %>
+                          <% if current_user.admin %>
+                            <td>
+                              <%= form_for item, html: { class: 'item-status-form', method: 'put' } do |f| %>
+                                <%= f.hidden_field :id, value: item.id %>
+                                <% if item.complete %>
+                                  <%= f.select :complete, [ [ 'Ordered' ], [ 'In Queue' ] ], { selected: 'Ordered' }, class: 'item-select-box' %>
+                                <% else %>
+                                  <%= f.select :complete, [ [ 'Ordered' ], [ 'In Queue' ] ], { selected: 'In Queue' }, class: 'item-select-box' %>
+                                <% end %>
+                                <%= f.submit 'Change Status', class: 'submit-item-status' %>
+                              <% end %>
+                            </td>
+                          <% end %>
+                        </tr>
+                      <% end %>
+                    </table>
+                  </div>
                 </div>
 							</div><!-- /.event-body -->
 						</div><!-- /.event-box -->

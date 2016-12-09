@@ -7,4 +7,20 @@
   <% end %>
   <td><%= item.pharmacy.name %></td>
   <td><%= "#{ item.user.first_name } #{ item.user.last_name }" %></td>
+  <% if item.complete %>
+    <td>Ordered</td>
+  <% else %>
+    <td>In Queue</td>
+  <% end %>
+  <td>
+    <%= form_for item, html: { class: 'item-status-form', method: 'put' } do |f| %>
+      <%= f.hidden_field :id, value: item.id %>
+      <% if item.complete %>
+        <%= f.select :complete, [ [ 'Ordered' ], [ 'In Queue' ] ], { selected: 'Ordered' }, class: 'item-select-box' %>
+      <% else %>
+        <%= f.select :complete, [ [ 'Ordered' ], [ 'In Queue' ] ], { selected: 'In Queue' }, class: 'item-select-box' %>
+      <% end %>
+      <%= f.submit 'Change Status', class: 'submit-item-status' %>
+    <% end %>
+  </td>
 </tr>

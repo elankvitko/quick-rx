@@ -24,9 +24,13 @@ $( 'form .submit-new-item' ).click( function( e ) {
     url: url,
     data: data
   }).done( function( response ) {
-    $( '.new-item-form' ).hide();
-    $( 'a.open-item-order i' ).toggleClass( 'fa-minus', 'fa-plus' );
-    $( response ).insertAfter( '.first-position' );
-    $( '.new-item-form' )[ 0 ].reset();
+    location.reload();
   });
+});
+
+$( '.item-select-box' ).on( 'change', function( e ) {
+  e.preventDefault();
+  var target = e.target.parentElement.childNodes[ 8 ]
+
+  $( target ).click();
 });
