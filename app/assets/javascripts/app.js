@@ -3,7 +3,7 @@
 
 	$(document).ready(function() {
 
-		// var $win = $(window);
+		var $win = $(window);
 		var $doc = $(document);
 
 		// Load Foundation
@@ -216,43 +216,6 @@
 		$('audio').mediaelementplayer();
 
 		var tagName;
-
-		$('form').each(function () {
-			$(this).validate({
-				highlight: function(element, errorClass) {
-					tagName = element.tagName.toLowerCase();
-
-					if(tagName === 'select') {
-						$(element)
-							.closest('.selecter')
-							.addClass('error');
-					} else {
-						$(element).addClass('error');
-					}
-				},
-				focusCleanup: true,
-				rules: {
-					name: "required",
-					email: {
-						required: true,
-						email: true
-					}
-				},
-				errorPlacement: function (error, element) {
-					$(element)
-						.closest('form')
-						.find('.message-error')
-						.addClass('active');
-				},
-				submitHandler: function(form) {
-					$(form).submit(function () {
-						$(this).ajaxSubmit();
-
-						return false;
-					});
-				}
-			});
-		});
 
 		$(function(){
 			$.stellar({
