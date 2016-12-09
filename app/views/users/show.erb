@@ -95,7 +95,6 @@
                       <% @all_items.each do | item | %>
                         <tr>
                           <td><%= item.name %></td>
-                          <td><%= item.qty %></td>
                           <% if item.link != 'http://' %>
                             <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
                           <% else %>
