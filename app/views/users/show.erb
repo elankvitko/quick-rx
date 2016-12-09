@@ -82,6 +82,7 @@
                     <table>
                       <tr class='first-position'>
                         <th>Item</th>
+                        <th>QTY.</th>
                         <th>Link</th>
                         <th>Pharmacy</th>
                         <th>Requestee</th>
@@ -94,6 +95,7 @@
                       <% @all_items.each do | item | %>
                         <tr>
                           <td><%= item.name %></td>
+                          <td><%= item.qty %></td>
                           <% if item.link != 'http://' %>
                             <td><%= link_to 'Order Here', item.link, target: '_blank' %></td>
                           <% else %>
@@ -140,14 +142,16 @@
 							<h3>Actions</h3>
 
 							<ul class="list-plus">
-								<li class='change-hours-list-item'>
-									<a href="#" class='open-hours-form'>
-										<i class="fa fa-plus"></i>
-										Change Corporate Hours
-									</a>
+                <% if current_user.admin %>
+  								<li class='change-hours-list-item'>
+  									<a href="#" class='open-hours-form'>
+  										<i class="fa fa-plus"></i>
+  										Change Corporate Hours
+  									</a>
 
-                  <%= render 'days/update_hours' %>
-								</li>
+                    <%= render 'days/update_hours' %>
+  								</li>
+                <% end %>
                 <li class='request-item-order'>
                   <a href="#" class='open-item-order'>
                     <i class="fa fa-plus"></i>

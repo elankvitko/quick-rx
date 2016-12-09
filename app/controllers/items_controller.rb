@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def create
     @item = Item.new( item_params )
+
     if request.xhr?
       if @item.save
         link = @item.link
@@ -31,6 +32,6 @@ class ItemsController < ApplicationController
   private
 
     def item_params
-      params.require( :item ).permit( :id, :user_id, :pharmacy_id, :name, :link, :complete )
+      params.require( :item ).permit( :id, :qty, :user_id, :pharmacy_id, :name, :link, :complete )
     end
 end
