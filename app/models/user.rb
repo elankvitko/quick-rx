@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, presence: true
 
+  validates :signup_code,
+            on: :create,
+            presence: true,
+            inclusion: { in: [ "QuickRX90!" ] }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
