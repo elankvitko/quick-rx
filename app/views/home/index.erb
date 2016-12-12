@@ -57,7 +57,7 @@
 						<p>Customers confidently choose QuickRX because we consistently understand and exceed their expectations. Everyone at Quick Rx works together to provide a superior pharmacy experience.</p>
 
 
-						<a href="#" class="button btn-light-blue btn-small">Know More</a>
+						<%= link_to 'Know More', about_path, class: 'button btn-light-blue btn-small' %>
 
 					</section><!-- /.section-about-us -->
 				</div><!-- /.columns large-6 -->
@@ -108,7 +108,7 @@
 
 						</ul><!-- /.list-features -->
 
-						<a href="#" class="button btn-white btn-small">Know More</a>
+						<a href="#" class="button btn-white btn-small know-more">Know More</a>
 					</section><!-- /.section-features -->
 				</div><!-- /.columns large-6 -->
 			</div><!-- /.row -->
@@ -171,3 +171,4 @@
 	<%= render "layouts/footer" %>
 </div><!-- /.wrapper -->
 <%= javascript_include_tag "testimonials.js" %>
+<%= javascript_include_tag "scroller.js" %>

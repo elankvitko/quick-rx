@@ -5,7 +5,10 @@
         <div class="service-description">
           <h1><span>Quick RX</span>Retail Stores</h1>
           <p>With over 10 locations and rapidly growing, Quick RX is sure to be in your area soon!</p>
-          <a href="#"><i class="fa fa-plus"></i> Know more</a>
+          <%= link_to about_path do %>
+            <i class="fa fa-plus"></i>
+            Know More
+          <% end %>
         </div><!-- /.service-description -->
       </div><!-- /.columns large-4 -->
 
@@ -141,7 +144,7 @@
 
           <p>340B is a federally-sponsored program designed to allow covered entities to extend the resources of the federal government to underprivileged patients.</p>
 
-          <a href="http://340bassured.com">
+          <a href="http://340bassured.com", target='_blank'>
             <i class="fa fa-plus"></i>
             Know more
           </a>
