@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
 
     if request.xhr?
       if @item.save
+        ItemMailer.new_item.deliver_now
+
         link = @item.link
 
         if link[ 0..6 ] != 'http://'
