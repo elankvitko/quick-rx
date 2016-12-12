@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>QuickrxSpecialty</title>
+  <%# binding.pry %>
+  <% if params[ 'controller' ] == 'users/sessions' %>
+    <title>QuickRX - Login</title>
+  <% elsif params[ 'controller' ] == 'users/registrations' %>
+    <title>QuickRX - Sign Up</title>
+  <% else %>
+    <title>QuickRX - <%= params[ 'controller' ].capitalize %></title>
+  <% end %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> -->
   <%= stylesheet_link_tag    'style', media: 'all' %>
