@@ -1,19 +1,47 @@
-<h2>
-  <%= @todo.name %>
-</h2>
+<div class="wrapper">
 
-<p>
-  <%= @todo.body %>
-</p>
+	<%= render "layouts/header" %>
 
-<% if !@todo.complete %>
-  <%= form_for @todo, url: todo_path( @todo ), html: { method: :put } do |f| %>
-    <%= f.hidden_field :complete, value: true %>
-    <%=f.submit "Mark Complete" %>
-  <% end %>
-<% else %>
-  <%= form_for @todo, url: todo_path( @todo ), html: { method: :put } do |f| %>
-    <%= f.hidden_field :complete, value: false %>
-    <%=f.submit "Mark Incomplete" %>
-  <% end %>
-<% end %>
+	<div class="main grey">
+		<div class="row">
+			<div class="columns large-12">
+				<p class="breadcrumbs">
+				</p><!-- /.breadcrumbs -->
+			</div><!-- /.columns large-12 -->
+
+			<div class="columns large-12 medium-12">
+				<div class="content">
+					<article class="event article-single-event">
+
+						<div class="entry-content">
+							<div class="event-body error" itemprop="articleBody">
+                <h2 class='todo-head'>
+                  <%= @todo.name %>
+                </h2>
+
+                <p class='todo-body'>
+                  <%= @todo.body %>
+                </p>
+
+                <% if !@todo.complete %>
+                  <%= form_for @todo, url: todo_path( @todo ), html: { method: :put } do |f| %>
+                    <%= f.hidden_field :complete, value: true %>
+                    <%=f.submit "Mark Complete" %>
+                  <% end %>
+                <% else %>
+                  <%= form_for @todo, url: todo_path( @todo ), html: { method: :put } do |f| %>
+                    <%= f.hidden_field :complete, value: false %>
+                    <%=f.submit "Mark Incomplete" %>
+                  <% end %>
+                <% end %>
+							</div><!-- /.event-body -->
+						</div><!-- /.event-box -->
+					</article><!-- /.event article-single-event -->
+
+				</div><!-- /.content -->
+			</div><!-- /.columns large-8 -->
+		</div><!-- /.row -->
+	</div><!-- /.main -->
+
+  <%= render "layouts/footer" %>
+</div><!-- /.wrapper -->
