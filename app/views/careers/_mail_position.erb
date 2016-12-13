@@ -1,0 +1,40 @@
+<form class="position-app-form" action="/careers/send" method="get">
+  <label for="first_name">First Name</label>
+    <input type="text" name="first_name" value="<%= current_user.first_name %>">
+  <label for="last_name">Last Name</label>
+    <input type="text" name="last_name" value="<%= current_user.last_name %>">
+  <label for="email">Email</label>
+    <input type="text" name="email" value="<%= current_user.email %>">
+  <label for="body">Tell Us Why You Think You'd Be A Good Fit For Quick RX!</label>
+    <textarea name="body" rows="10" cols="10"></textarea>
+    <input type="hidden" name="position_id" value="<%= @position.id %>">
+    <input type="submit" value="Apply!" class='submit-app'>
+</form>
+
+<script type="text/javascript">
+  $( '.submit-app' ).on( 'click', function( e ) {
+    e.preventDefault();
+    var target = e.target;
+    var url = target.parentElement.action;
+    var data = 'first_name=' +
+                target.parentElement[0].value +
+                '&last_name=' +
+                target.parentElement[1].value +
+                '&email=' +
+                target.parentElement[2].value +
+                '&body=' +
+                target.parentElement[3].value +
+                '&position_id=' +
+                target.parentElement[4].value
+    $.ajax({
+      type: 'get',
+      url: url,
+      data: data
+    }).done( function( response ) {
+      var area = document.getElementsByClassName('event-body')
+
+      $( area ).empty();
+      $( area ).append( response );
+    });
+  });
+</script>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212155451) do
+ActiveRecord::Schema.define(version: 20161213194150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,25 @@ ActiveRecord::Schema.define(version: 20161212155451) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "complete",    default: false, null: false
-    t.string   "qty",         default: "1",   null: false
   end
 
   add_index "items", ["pharmacy_id"], name: "index_items_on_pharmacy_id", using: :btree
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
+
+  create_table "job_categories", force: :cascade do |t|
+    t.string   "category",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "position",        null: false
+    t.integer  "job_category_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "jobs", ["job_category_id"], name: "index_jobs_on_job_category_id", using: :btree
 
   create_table "pharmacies", force: :cascade do |t|
     t.string   "name"
@@ -94,6 +108,16 @@ ActiveRecord::Schema.define(version: 20161212155451) do
 
   add_index "todos", ["user_id"], name: "index_todos_on_user_id", using: :btree
 
+  create_table "user_jobs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_jobs", ["job_id"], name: "index_user_jobs_on_job_id", using: :btree
+  add_index "user_jobs", ["user_id"], name: "index_user_jobs_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                             null: false
     t.string   "last_name",                              null: false
@@ -110,6 +134,7 @@ ActiveRecord::Schema.define(version: 20161212155451) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false, null: false
+    t.boolean  "career_account",         default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -117,6 +142,7 @@ ActiveRecord::Schema.define(version: 20161212155451) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "jobs", "job_categories"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "users"
