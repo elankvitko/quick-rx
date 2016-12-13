@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find_by( id: params[ 'id' ] )
-
-    if session[ :career_code ]
-      @user.update_attributes( career_account: true )
+    if session[ :career_code ] == 'true'
       session[ :career_code ] = false
     end
+
+    @user = User.find_by( id: params[ 'id' ] )
 
     if @user == nil && user_signed_in?
       redirect_to user_path( current_user )

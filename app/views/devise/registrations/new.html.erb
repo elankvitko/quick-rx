@@ -32,7 +32,7 @@
   </div>
 
   <% if session[ :career_code ] %>
-    <%= f.hidden_field :career_account, value: session[ :career_code ] %>
+    <%= f.hidden_field :career_account, value: 'true' %>
   <% end %>
 
   <div class="actions">

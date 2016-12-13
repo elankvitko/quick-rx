@@ -20,7 +20,7 @@
 						<div class="entry-content">
 							<div class="event-body" itemprop="articleBody">
                 <div class="dashboard-tables">
-                  <% if current_user.career_account %>
+                  <% if current_user.career_account == 'true' %>
                     <div class="positions-table">
                       <h3 class='dashboard-table-headers'>Applied Positions</h3>
 
@@ -36,6 +36,8 @@
                           </tr>
                         <% end %>
                       </table>
+
+                      <%= link_to 'Apply For A Position!', careers_path %>
                     </div>
                   <% else %>
                     <div class="tasks-table">
