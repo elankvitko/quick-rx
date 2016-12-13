@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <%= render "layouts/header" %>
+
+
+  <div class="main grey">
+    <div class="row">
+      <div class="columns large-12">
+        <p class="breadcrumbs">
+        </p><!-- /.breadcrumbs -->
+      </div><!-- /.columns large-12 -->
+
+      <div class="columns large-12 medium-12">
+        <div class="content">
+          <article class="event article-single-event">
+            <div class="entry-content">
+              <div class="event-body" itemprop="articleBody">
+                <h1 class='careers-header'>We're excited to have you work with us!</h1>
+                <br>
+                <p class='careers-subline'>At Quick RX, we like to think that everyone is family and should be treated as such. If you don't see a position you like, contact us directly by phone to let us know what you're looking for. We may be able to help!</p>
+                <br>
+
+                <% if params[ 'message' ] %>
+                  <p><%= params[ 'message' ] %></p>
+                <% end %>
+
+                <div class="careers-table">
+                  <%= form_for @category, html: { class: 'pick-category' }  do |f| %>
+                    <label for="category_id">Category</label>
+                    <%= f.select :id, JobCategory.all.collect { |p| [ p.category, p.id ] }, { include_blank: true }, class: 'category-picker' %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.submit 'Submit Request', class: 'submit-category-selection' %>
+                  <% end %>
+                </div>
+              </div><!-- /.event-body -->
+            </div><!-- /.event-box -->
+          </article><!-- /.event article-single-event -->
+
+        </div><!-- /.content -->
+      </div><!-- /.columns large-8 -->
+    </div><!-- /.row -->
+  </div><!-- /.main -->
+
+  <%= render "layouts/footer" %>
+</div>
+
+<script type="text/javascript">
+  $( '.pick-category select' ).on( 'change', function( e ) {
+    e.preventDefault();
+    var target = e.target;
+    var action = target.parentElement.action;
+    var data = $( target ).serialize();
+
+    $.ajax({
+      type: 'get',
+      url: action,
+      data: data
+    }).done( function( response ) {
+      $( '.event-body' ).append( response );
+    });
+  });
+</script>

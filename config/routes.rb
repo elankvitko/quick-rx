@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   resources :todos
   resources :days, only: [:show, :update]
   resources :items
+  resources :careers
+  resources :job_categories
+  resource :jobs
+
+  # get 'careers/send' => "jobs#sendmail"
+  match "/careers/send", :to => "jobs#sendmail", :via => :get
 
   get 'errors/not_found'
 

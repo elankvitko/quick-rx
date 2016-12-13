@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   has_many :todos
   has_many :items
 
+  has_many :user_jobs
+  has_many :jobs, :through => :user_jobs
+
   validates :first_name, :last_name, presence: true
 
   # Include default devise modules. Others available are:

@@ -1,0 +1,25 @@
+<div class="careers-positions-table">
+  <%= form_for @position, html: { class: 'pick-category-position' }  do |f| %>
+    <label for="position_id">Position</label>
+    <%= f.select :id, positions.collect { |p| [ p.position, p.id ] }, { include_blank: true }, class: 'position-picker' %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $( 'body .pick-category-position select' ).on( 'change', function( e ) {
+    e.preventDefault();
+
+    var target = e.target;
+    var action = target.parentElement.action;
+    var data = $( target ).serialize();
+
+    $.ajax({
+      type: 'get',
+      url: action,
+      data: data
+    }).done( function( response ) {
+      $( '.event-body' ).append( response );
+    });
+  });
+</script>

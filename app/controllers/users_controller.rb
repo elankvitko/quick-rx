@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by( id: params[ 'id' ] )
 
+    if session[ :career_code ]
+      @user.update_attributes( career_account: true )
+      session[ :career_code ] = false
+    end
+
     if @user == nil && user_signed_in?
       redirect_to user_path( current_user )
     elsif !user_signed_in?
@@ -15,6 +20,7 @@ class UsersController < ApplicationController
           @todos = @todos.sort_by { |todo| todo.id }
         end
 
+        @positions = current_user.jobs
         @todo = Todo.new
         @day = Day.find_by( day: 'weekday' )
         @item = Item.new
