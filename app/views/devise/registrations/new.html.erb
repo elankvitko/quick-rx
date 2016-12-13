@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<% if session[ :career_code ] %>
+  <h3 class='center-reg'>In order to apply for a career at Quick RX, please sign up below!</h3>
+<% end %>
+
+<h2 class='center-reg'>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
