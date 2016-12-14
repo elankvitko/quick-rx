@@ -8,7 +8,7 @@ class ItemMailer < ApplicationMailer
   def new_item
     @item = Item.last
 
-    mail to: "lidiya@qrpgroup.com",
+    mail to: "supplies@qrpgroup.com",
          subject: 'Order Request'
   end
 end
