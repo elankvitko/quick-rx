@@ -1,0 +1,18 @@
+<div class="positions-table">
+  <h3 class='dashboard-table-headers'>Applied Positions</h3>
+
+  <table>
+    <tr>
+      <th>Position</th>
+      <th>Status</th>
+    </tr>
+    <% @positions.each do | position | %>
+      <tr>
+        <td><p><%= position.position %></p></td>
+        <td><p>Application Submitted Successfully</p></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Apply For A Position!', careers_path %>
+</div>

@@ -1,0 +1,30 @@
+<div class="tasks-table">
+  <h3 class='dashboard-table-headers'>To-Do Lists</h4>
+
+  <table>
+    <tr>
+      <th>Task</th>
+      <th>Complete</th>
+      <th>Delete?</th>
+    </tr>
+    <% @todos.each do | todo | %>
+      <tr>
+        <td><%= link_to "#{ todo.name }", todo_path( todo.id ) %></td>
+        <% if todo.complete == true %>
+          <td><p>&#10004;</p></td>
+        <% else %>
+          <td></td>
+        <% end %>
+        <td>
+          <% @this_todo = todo %>
+          <%= render partial: 'todos/delete_todo', layout: false, locals: { todo: @this_todo } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <a href="#" class='new-task-toggle'>Create New Task +</a>
+  <a href="#" class='minus'>Create New Task -</a>
+
+  <%= render 'todos/new_todo' %>
+</div>
