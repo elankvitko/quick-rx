@@ -1,0 +1,81 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>New Job Application</title>
+  <style type="text/css">
+      body {
+            background: #54667a;
+           }
+
+      div#content {
+                    width: 80%;
+                    margin: 0 auto;
+                    background: #54667a;
+                    padding: 30px;
+                    margin-top: 5%;
+                    color: #fff;
+                  }
+
+      h1 {
+          font-family: "Dosis", sans-serif;
+          font-size: 36px;
+          line-height: 1;
+          font-weight: 700;
+          text-align: center;
+         }
+
+      h3 {
+          font-family: "Dosis", sans-serif;
+          font-size: 22px;
+          line-height: 1;
+          font-weight: 400;
+          text-align: center;
+          }
+
+      p {
+          font-family: "Karla", sans-serif;
+          font-weight: normal;
+          font-size: 1.2rem;
+          line-height: 1.6;
+          margin-bottom: 1.25rem;
+          text-rendering: optimizeLegibility;
+        }
+
+      p.center-info {
+                      text-align: center;
+                    }
+
+      h4 {
+          font-family: "Karla", sans-serif;
+          font-weight: normal;
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 1.25rem;
+          text-rendering: optimizeLegibility;
+         }
+
+      img {
+            width: 300px;
+            text-align: center;
+          }
+  </style>
+</head>
+<body>
+  <div id='content'>
+    <h1>A Message to the Quick RX Support Department! An inquiry was made. Please review!</h1>
+
+    <h3><%= @name %> filled out the contact form:</h3>
+
+    <br>
+
+    <p>
+      <%= @body %>
+    </p>
+
+    <h4>Please contact <%= @name %> at <%= @email %> if this message requires feedback!</h4>
+  </div>
+
+  <%= image_tag( attachments[ 'logo.png' ].url, :align => "middle" ) -%>
+
+</body>
+</html>

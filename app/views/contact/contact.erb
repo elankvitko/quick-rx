@@ -15,14 +15,30 @@
   					<article class="event article-single-event">
 
   						<div class="entry-content">
-  							<div class="event-body" itemprop="articleBody">
+  							<div class="event-body blocky-body" itemprop="articleBody">
   								<p>We love feedback! Please contact any one of our locations on the left hand side to let us know how we're doing. Our corporate headquarters information is below. Thank you for choosing Quick RX!</p>
 
   								<blockquote>Quick RX Corporate <br> 1047 Surf Ave. <br> Brooklyn, NY 11224 <br> (212) 249-8202 <%= image_tag( 'logo.png', size: "250x150", class: "qrx-logo-contact" ) %> </blockquote>
-
   							</div><!-- /.event-body -->
   						</div><!-- /.event-box -->
   					</article><!-- /.event article-single-event -->
+
+            <article class="event article-single-event">
+              <div class="entry-content">
+                <div class="event-body form-holder">
+                  <h3>Send Us An Email</h3>
+                  <form class="contact-us-form" action="/contact/sm" method="get">
+                    <label for="name">Full Name</label>
+                      <input type="text" name="name">
+                    <label for="email">Email</label>
+                      <input type="text" name="email">
+                    <label for="body">Message</label>
+                      <textarea name="body" rows="8" cols="40"></textarea>
+                    <input type="submit" name="submit" value="Send Message" class='submit-contact-email'>
+                  </form>
+                </div>
+              </div>
+            </article>
 
   				</div><!-- /.content -->
   			</div><!-- /.columns large-8 -->
@@ -48,6 +64,29 @@
 </div>
 
 <script type="text/javascript">
+  $( '.submit-contact-email' ).on( 'click', function( e ) {
+    e.preventDefault();
+    var target = e.target;
+
+    var url = e.target.parentElement.action;
+
+    var data = 'name=' +
+               e.target.parentElement[0].value +
+               '&email=' +
+               e.target.parentElement[1].value +
+               '&body=' +
+               e.target.parentElement[2].value
+
+    $.ajax({
+      type: 'get',
+      url: url,
+      data: data
+    }).done( function( response ) {
+      $('.form-holder').html( response );
+    });
+  });
+
+
   $( 'ul.locations-list-plus li a' ).click( function( e ) {
     e.preventDefault();
 
@@ -57,13 +96,13 @@
       var target_html_one = $( target[ 0 ] ).html();
       var target_html_two = $( target[ 1 ] ).html();
 
-      $( '.event-body blockquote' ).remove();
-      $('.event-body').append( target_html_one );
-      $('.event-body').append( target_html_two );
+      $( '.blocky-body blockquote' ).remove();
+      $('.blocky-body').append( target_html_one );
+      $('.blocky-body').append( target_html_two );
     } else {
       var target_html = $( target ).html();
-      $( '.event-body blockquote' ).remove();
-      $('.event-body').append( target_html );
+      $( '.blocky-body blockquote' ).remove();
+      $('.blocky-body').append( target_html );
     };
   });
 </script>

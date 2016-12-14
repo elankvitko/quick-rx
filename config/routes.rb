@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # get 'careers/send' => "jobs#sendmail"
   match "/careers/send", :to => "jobs#sendmail", :via => :get
+  match "/contact/sm", :to => "contact#send_email", :via => :get
 
   get 'errors/not_found'
 
