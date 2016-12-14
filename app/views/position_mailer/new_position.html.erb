@@ -1,20 +1,86 @@
-<h1>Hi Lidiya! Here's a career application. Please review:</h1>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>New Job Application</title>
+  <style type="text/css">
+      body {
+            background: #54667a;
+           }
 
-<h3>Position: <%= @position.position %></h3>
+      div#content {
+                    width: 80%;
+                    margin: 0 auto;
+                    background: #54667a;
+                    padding: 30px;
+                    margin-top: 5%;
+                    color: #fff;
+                  }
 
-<p><%= @user.first_name %></p>
-<p><%= @user.last_name %></p>
-<p><%= @user.email %></p>
+      h1 {
+          font-family: "Dosis", sans-serif;
+          font-size: 36px;
+          line-height: 1;
+          font-weight: 700;
+          text-align: center;
+         }
 
-<br>
-<br>
+      h3 {
+          font-family: "Dosis", sans-serif;
+          font-size: 22px;
+          line-height: 1;
+          font-weight: 400;
+          text-align: center;
+          }
 
-<h3>Quick RX asks why <%= @user.first_name %> would be a good fit for the company. His/her answer is:</h3>
+      p {
+          font-family: "Karla", sans-serif;
+          font-weight: normal;
+          font-size: 1.2rem;
+          line-height: 1.6;
+          margin-bottom: 1.25rem;
+          text-rendering: optimizeLegibility;
+        }
 
-<br>
+      p.center-info {
+                      text-align: center;
+                    }
 
-<p>
-  <%= @body %>
-</p>
+      h4 {
+          font-family: "Karla", sans-serif;
+          font-weight: normal;
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 1.25rem;
+          text-rendering: optimizeLegibility;
+         }
 
-<h4>Please Contact this person if you see them as a good fit for the company!</h4>
+      img {
+            width: 300px;
+            text-align: center;
+          }
+  </style>
+</head>
+<body>
+  <div id='content'>
+    <h1>Hi Lidiya! Here's a career application. Please review:</h1>
+
+    <h3>Position: <%= @position.position %></h3>
+
+    <p class='center-info'><%= "#{ @user.first_name } #{ @user.last_name }" %></p>
+    <p class='center-info'><%= @user.email %></p>
+
+    <br>
+
+    <h3>Quick RX asks why <%= @user.first_name %> would be a good fit for the company. His/her answer is:</h3>
+
+    <p>
+      <%= @body %>
+    </p>
+
+    <h4>Please contact <%= "#{@user.first_name} #{@user.last_name}" %> if you see them as a good fit for the company!</h4>
+  </div>
+
+  <%= image_tag( attachments[ 'logo.png' ].url, :align => "middle" ) -%>
+
+</body>
+</html>
