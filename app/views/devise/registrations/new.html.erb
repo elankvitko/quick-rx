@@ -3,6 +3,11 @@
     <h3 class='center-reg'>In order to apply for a career at Quick RX, please sign up below!</h3>
     <h2 class='center-reg'>Sign up</h2>
   </div>
+<% else %>
+  <div class="center-reg">
+    <h3 class='center-reg'>Welcome To The Quick RX Family!</h3>
+    <h2 class='center-reg'>Sign up</h2>
+  </div>
 <% end %>
 
 
@@ -46,4 +51,6 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="center-reg">
+  <h3>If you already have an account, <%= link_to 'Login Here', new_user_session_path %>!</h3>
+</div>
